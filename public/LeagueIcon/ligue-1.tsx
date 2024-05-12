@@ -1,13 +1,14 @@
 export default function Ligue1Icon() {
   return (
-    <div className="w-14">
+    <div className="">
       <svg
         clip-rule="evenodd"
         fill-rule="evenodd"
         stroke-linejoin="round"
         stroke-miterlimit="2"
-        viewBox="0 0 560 400"
+        viewBox="110 50 320 310"
         xmlns="http://www.w3.org/2000/svg"
+        width={35}
       >
         <g
           fill-rule="nonzero"

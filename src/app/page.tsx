@@ -6,9 +6,9 @@ import { FaArrowRight } from "react-icons/fa6";
 export default function Home() {
   return (
     <>
-      <main className="m-7">
+      <main className="m-6">
         <section className="rounded-xl bg-blue-400  ">
-          <div className="h-64 p-5 flex justify-start items-end gap-2 text-6xl">
+          <div className="h-56 p-5 flex justify-start items-end gap-2 text-6xl">
             <GiSoccerBall />
             <Link href={"./"}>GoalPulse</Link>
           </div>
@@ -28,7 +28,7 @@ export default function Home() {
             </button>
           </div>
           <div>
-            <div className=" h-[38rem] w-[70rem] relative overflow-clip ">
+            <div className=" h-[32rem] w-[60rem] relative overflow-clip ">
               <Image
                 src="/cover1.jpeg"
                 layout="fill"

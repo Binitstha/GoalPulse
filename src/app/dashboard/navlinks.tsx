@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import PremierLeagueIcon from "../../../public/LeagueIcon/premier-league";
 import Laliga from "../../../public/LeagueIcon/laliga";
+import Ligue1Icon from "../../../public/LeagueIcon/ligue-1";
+import BundesligaIcon from "../../../public/LeagueIcon/bundesliga";
 
 export default function Navlinks() {
   const navlinks = [
@@ -18,16 +20,16 @@ export default function Navlinks() {
       href: "/dashboard/premierLeague",
       icon: Laliga,
     },
-    // {
-    //   name: "Bundesliga",
-    //   href: "/dashboard/premierLeague",
-    //   icon: "/leagueIcon/premier-league.svg",
-    // },
-    // {
-    //   name: "Ligue-1",
-    //   href: "/dashboard/premierLeague",
-    //   icon: "/leagueIcon/premier-league.svg",
-    // },
+    {
+      name: "Ligue-1",
+      href: "/dashboard/premierLeague",
+      icon: Ligue1Icon,
+    },
+    {
+      name: "Bundesliga",
+      href: "/dashboard/premierLeague",
+      icon: BundesligaIcon,
+    },
   ];
 
   const pathname = usePathname();
