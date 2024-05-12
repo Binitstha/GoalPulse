@@ -2,28 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+@import url('/css/app-wa-a60ddbceb7292f11c9e430d067b1eb9f.css?vsn=d');
+@import url('https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css');
+@import url('https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-thin.css');
+@import url('https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-solid.css');
+@import url('https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-regular.css');
+@import url('https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-light.css');
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: black;
 }
 
 @layer utilities {
