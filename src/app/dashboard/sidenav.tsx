@@ -1,14 +1,13 @@
 import { GiSoccerBall } from "react-icons/gi";
 import NavLinks from "./navlinks";
 import { GiPowerButton } from "react-icons/gi";
-import Image from "next/image";
 
 export default function Sidenav() {
   return (
     <>
-      <section className="border-2 h-full p-3 flex flex-col gap-3">
+      <section className="border-r-2 h-full p-3 flex flex-col gap-3">
         <div className="bg-blue-400 h-40 rounded-lg flex justify-items-end items-center p-3 text-3xl">
-          <div className="mt-auto flex justify-start items-center gap-1">
+          <div className="mt-auto flex relative justify-start items-center gap-1">
             <GiSoccerBall />
             <p>GoalPulse</p>
           </div>

@@ -7,6 +7,7 @@ import PremierLeagueIcon from "../../../public/LeagueIcon/premier-league";
 import Laliga from "../../../public/LeagueIcon/laliga";
 import Ligue1Icon from "../../../public/LeagueIcon/ligue-1";
 import BundesligaIcon from "../../../public/LeagueIcon/bundesliga";
+import seriaAlogo from "../../../public/LeagueIcon/serieALogo";
 
 export default function Navlinks() {
   const navlinks = [
@@ -29,6 +30,11 @@ export default function Navlinks() {
       name: "Bundesliga",
       href: "/dashboard/premierLeague",
       icon: BundesligaIcon,
+    },
+    {
+      name: "Seria A",
+      href: "/dashboard/seriaA",
+      icon: seriaAlogo,
     },
   ];
 
