@@ -13,7 +13,7 @@ export default function Navlinks() {
   const navlinks = [
     {
       name: "premier league",
-      href: "/dashboard/premierLeague",
+      href: "/dashboard/premier-league",
       icon: PremierLeagueIcon,
     },
     {

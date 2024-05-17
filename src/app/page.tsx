@@ -8,10 +8,12 @@ export default function Home() {
     <>
       <main className="m-6">
         <section className="rounded-xl bg-blue-400  ">
-          <div className="h-56 p-5 flex justify-start items-end gap-2 text-6xl">
-            <GiSoccerBall />
-            <Link href={"./"}>GoalPulse</Link>
-          </div>
+          <Link href={"./"}>
+            <div className="h-56 p-5 flex justify-start items-end gap-2 text-6xl">
+              <GiSoccerBall />
+              GoalPulse
+            </div>
+          </Link>
         </section>
         <section className="text-black p-4 flex justify-between pb-0">
           <div className="flex gap-5 flex-col justify-center items-start p-10 text-2xl pb-0">

@@ -9,28 +9,6 @@ export default function ResultCard({
   team1: string;
   team2: string;
 }) {
-  const key = process.env.key;
-
-  const [data, setData] = useState([]);
-  const apiUrl = "https://serpapi.com/search.json?q=manchester+united&location=austin,+texas,+united+states";
-
-  // Fetch data using crossorigin.me as a proxy
-  fetch(`https://corsorigin.me/${apiUrl}`, { cache: "no-store" })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      return response.json();
-    })
-    .then(data => {
-      // Process the fetched data
-      console.log(data);
-    })
-    .catch(error => {
-      console.error("Error fetching data:", error);
-    });
-  
-  console.log(data);
 
   return (
     <>
