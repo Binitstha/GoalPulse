@@ -1,0 +1,15 @@
+.cardSlideLeft {
+  animation: slideToLeft 2s ease-in-out forwards;
+}
+.cardSlideRight{
+  animation: slideToLeft 2s ease-in-out forwards;
+}
+
+@keyframes slideToLeft {
+  from {
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-100%);
+  }
+}
