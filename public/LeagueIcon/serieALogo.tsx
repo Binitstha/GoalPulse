@@ -1,10 +1,10 @@
 export default function seriaAlogo() {
   return (
     <svg
-      clip-rule="evenodd"
-      fill-rule="evenodd"
-      stroke-linejoin="round"
-      stroke-miterlimit="2"
+      clipRule="evenodd"
+      fillRule="evenodd"
+      strokeLinejoin="round"
+      strokeMiterlimit="2"
       viewBox="120 0 350 400"
       width={35}
       xmlns="http://www.w3.org/2000/svg"
@@ -17,13 +17,13 @@ export default function seriaAlogo() {
         y1="329.721"
         y2="329.721"
       >
-        <stop offset="0" stop-color="#31ecff" />
-        <stop offset=".05" stop-color="#2de2ff" />
-        <stop offset=".3" stop-color="#1bb2ff" />
-        <stop offset=".51" stop-color="#0e90ff" />
-        <stop offset=".69" stop-color="#067bff" />
-        <stop offset=".81" stop-color="#0373ff" />
-        <stop offset="1" stop-color="#0373ff" />
+        <stop offset="0" stopColor="#31ecff" />
+        <stop offset=".05" stopColor="#2de2ff" />
+        <stop offset=".3" stopColor="#1bb2ff" />
+        <stop offset=".51" stopColor="#0e90ff" />
+        <stop offset=".69" stopColor="#067bff" />
+        <stop offset=".81" stopColor="#0373ff" />
+        <stop offset="1" stopColor="#0373ff" />
       </linearGradient>
       <linearGradient
         id="b"
@@ -34,15 +34,15 @@ export default function seriaAlogo() {
         y1="0"
         y2="0"
       >
-        <stop offset="0" stop-color="#31ecff" />
-        <stop offset=".05" stop-color="#2de2ff" />
-        <stop offset=".29" stop-color="#1bb2ff" />
-        <stop offset=".51" stop-color="#0e90ff" />
-        <stop offset=".69" stop-color="#067bff" />
-        <stop offset=".8" stop-color="#0373ff" />
-        <stop offset="1" stop-color="#0373ff" />
+        <stop offset="0" stopColor="#31ecff" />
+        <stop offset=".05" stopColor="#2de2ff" />
+        <stop offset=".29" stopColor="#1bb2ff" />
+        <stop offset=".51" stopColor="#0e90ff" />
+        <stop offset=".69" stopColor="#067bff" />
+        <stop offset=".8" stopColor="#0373ff" />
+        <stop offset="1" stopColor="#0373ff" />
       </linearGradient>
-      <g stroke-width=".516929">
+      <g strokeWidth=".516929">
         <path
           d="m180 307.6244514h66.7355339v6.9268486h-66.7355339z"
           fill="#00b74f"
@@ -58,7 +58,7 @@ export default function seriaAlogo() {
       </g>
       <g
         fill="#1a1659"
-        fill-rule="nonzero"
+        fillRule="nonzero"
         transform="matrix(.516929 0 0 .516929 180 56.0868)"
       >
         <path d="m55 451.8c-.3-.3-.5-1-.1-1.4l6.3-7.2c.3-.4.8-.4 1.2-.1 3.7 3 8.7 5.7 14.7 5.7 5.8 0 9.1-2.7 9.1-6.7 0-3.3-2-5.3-8.7-6.3l-3-.4c-11.4-1.6-17.7-6.9-17.7-16.7 0-10.3 7.7-17.1 19.8-17.1 7.3 0 14.3 2.2 19 5.8.5.3.5.7.1 1.2l-5 7.5c-.3.4-.7.5-1.1.3-4.2-2.9-8.4-4.2-13-4.2-4.9 0-7.5 2.6-7.5 6.1 0 3.3 2.3 5.3 8.7 6.1l3 .4c11.6 1.6 17.7 6.8 17.7 17 0 10.1-7.5 17.7-22 17.7-8.7-.1-17.2-3.5-21.5-7.7z" />
@@ -69,7 +69,7 @@ export default function seriaAlogo() {
         <path d="m298.4 403.4c.1-.5.5-.8 1.1-.8h10.3c.5 0 1 .3 1.1.8l18.9 54.4c.1.5 0 .8-.5.8h-10.7c-.5 0-1-.3-1.1-.8l-3.3-9.8h-19.6l-3.1 9.8c-.1.5-.5.8-1.1.8h-10.7c-.5 0-.7-.3-.5-.8zm12.5 34.2-6.4-19.6h-.3l-6.4 19.6z" />
       </g>
       <g
-        fill-rule="nonzero"
+        fillRule="nonzero"
         transform="matrix(.516929 0 0 .516929 180 56.0868)"
       >
         <g fill="#1a1659">

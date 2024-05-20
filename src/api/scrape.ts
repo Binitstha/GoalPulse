@@ -8,9 +8,10 @@ export default async function scrape() {
     return;
   }
   noStore();
+
   try {
     const article = await scrapper(url);
-    console.log(article);
+    return article;
   } catch (err) {
     console.log("Error while scrapping data.");
   }

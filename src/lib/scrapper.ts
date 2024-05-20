@@ -15,13 +15,12 @@ async function scrapper(url: string): Promise<Articles[]> {
     const articles = document.querySelectorAll("article");
 
     return Array.from(articles)
-      .slice(0, 3)
       .map((article) => {
-        const titleElement = article.querySelector("h3");
-        const title = titleElement ? titleElement.innerHTML : "No title";
+        const titleElement =  article.querySelector("h3");
+        const title =  titleElement ? titleElement.innerHTML : "No title";
 
         const imgElement = article.querySelector("img");
-        const img = imgElement ? imgElement?.innerHTML : undefined;
+        const img = imgElement ? imgElement?.src : undefined;
 
         const timeElement = article.querySelector("time span");
         const time = timeElement ? timeElement.innerHTML : "No time";
