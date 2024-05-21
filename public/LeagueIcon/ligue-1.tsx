@@ -2,16 +2,16 @@ export default function Ligue1Icon() {
   return (
     <div className="">
       <svg
-        clip-rule="evenodd"
-        fill-rule="evenodd"
-        stroke-linejoin="round"
-        stroke-miterlimit="2"
+        clipRule="evenodd"
+        fillRule="evenodd"
+        strokeLinejoin="round"
+        strokeMiterlimit="2"
         viewBox="110 50 320 310"
         xmlns="http://www.w3.org/2000/svg"
         width={35}
       >
         <g
-          fill-rule="nonzero"
+          fillRule="nonzero"
           transform="matrix(.586854 0 0 .586854 180 53.2864)"
         >
           <path

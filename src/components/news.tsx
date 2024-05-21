@@ -1,6 +1,6 @@
-import scrapper from "@/lib/scrapper";
 import scrape from "@/api/scrape";
 import Image from "next/image";
+import { FaClock } from "react-icons/fa6";
 interface Article {
   title: string;
   img?: string;
@@ -11,21 +11,22 @@ export default async function News() {
   const data = await scrape();
   return (
     <div>
-      <p>Latest news</p>
-      <div>
+      <p className="text-xl">Latest news</p>
+      <div className="mt-3 flex flex-wrap gap-5">
         {data &&
           data.map((element, index) => (
-            <div key={index}>
-              <h3>{element.title}</h3>
+            <div key={index} className="border-2 rounded-md shadow-md p-5 w-[35%] grid gap-2">
               {element.img && (
                 <Image
                   src={`${element.img}`}
                   alt="news image"
-                  width={30}
-                  height={30}
+                  className="w-[50rem]"
+                  width={1000}
+                  height={1000}
                 />
               )}
-              <p>{element.time}</p>
+              <h3 dangerouslySetInnerHTML={{__html: element.title}}></h3>
+              <p className="flex gap-2 justify-start items-center"><i><FaClock/></i>{element.time}</p>
             </div>
           ))}
       </div>
