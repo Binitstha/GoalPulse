@@ -10,12 +10,12 @@ interface Article {
 export default async function News() {
   const data = await scrape();
   return (
-    <div>
+    <div className="w-fit">
       <p className="text-xl">Latest news</p>
       <div className="mt-3 flex flex-wrap gap-5">
         {data &&
           data.map((element, index) => (
-            <div key={index} className="border-2 rounded-md shadow-md p-5 w-[35%] grid gap-2">
+            <div key={index} className="rounded-md shadow-md p-5 w-[25rem] grid gap-2">
               {element.img && (
                 <Image
                   src={`${element.img}`}

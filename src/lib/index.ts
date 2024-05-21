@@ -1,33 +1,32 @@
-import { Match } from "@/types/type";
+import { MatchResponse } from "@/types/type";
+const { getJson } = require("serpapi");
 
-const TOKEN = process.env.NEXT_PUBLIC_TOKEN;
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
-const USERNAME = process.env.NEXT_PUBLIC_USERNAME;
-
-export async function fetchApi(endpoint: string): Promise<any> {
-  const res = await fetch(
-    `${API_URL}/${endpoint}&user=${USERNAME}&token=${TOKEN}`
-  );
-
-  if (!res.ok) {
-    throw new Error(`Failed to fetch match data: ${res.statusText}`);
-  }
-
-  const data = await res.json();
-  return data;
+export function matchData(query: string): Promise<MatchResponse | null> {
+  return new Promise((resolve, reject) => {
+    getJson(
+      {
+        q: query,
+        location: "austin, texas, united states",
+        api_key:
+          "a0e0ac5eb42f47f71b8ea9db4335ea650ec1ef5375019eb0e8a53d078a1a8dfe",
+      },
+      (response: any) => {
+        if (response && response.sports_results) {
+          resolve(response.sports_results);
+        } else {
+          console.error("Invalid response or sports_results is undefined", response);
+          reject(new Error("Invalid response or sports_results is undefined"));
+        }
+      }
+    );
+  });
 }
 
-// export async function getLiveStanding(): Promise<any> {
-//   return fetchApi(`leagues/?t=standings_live&season_id=13449`);
-// }
-
-export async function getScheduledMatch(): Promise<Match> {
-  return fetchApi(`livescores/?t=notstarted`);
-}
-
-export function convertTo12HourFormat(time: string) {
-  let [hours, minutes, second] = time.split(":").map(Number);
-  const period = hours >= 12 ? "PM" : "AM";
-  hours = hours % 12 || 12;
-  return `${hours}:${minutes.toString().padStart(2, "0")} ${period}`;
-}
+// Usage example
+matchData("premier league match")
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.error("Error fetching match data:", error);
+  });

@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { Match } from "../types/type";
 import Image from "next/image";
 import matchData from "@/../a"; // Adjust the import path as needed
-import { convertTo12HourFormat } from "@/lib/index";
 import "@/style/style.css";
 import MatchSlider from "../app/UI/slider";
 
@@ -21,7 +20,6 @@ export const MatchCard: React.FC<MatchCardProps> = ({ match }) => {
     <div className="card shadow-lg w-[22rem] flex flex-col gap-3 p-4 rounded-lg">
       <div className="flex justify-between">
         <div className="text-slate-600 text-sm">{league.name}</div>
-        <div className="text-sm">{convertTo12HourFormat(time.time)}</div>
       </div>
       <div className="teams gap-3 flex justify-center items-center">
         <div className="team w-[7rem] flex flex-col justify-center items-center">
