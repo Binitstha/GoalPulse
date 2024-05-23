@@ -2,8 +2,8 @@
 
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import React, { useState } from "react";
-import { Match } from "../../types/type"; // Adjust the import path as needed
-import { MatchCard } from "../../components/liveMatches";
+import { Match } from "../../types/match"; // Adjust the import path as needed
+import { MatchCard } from "../../components/Matches";
 import clsx from "clsx";
 
 interface MatchSliderProps {

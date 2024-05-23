@@ -7,7 +7,11 @@ const nextConfig = {
     }, {
       protocol: 'https',
       hostname: 'assets.goal.com'
-    }]
+    },
+  {
+    protocol:'https',
+    hostname: 'crests.football-data.org'
+  }]
   },
 };
 

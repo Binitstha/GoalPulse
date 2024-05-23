@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Match } from "../types/type";
 import Image from "next/image";
 import matchData from "@/../a"; // Adjust the import path as needed
 import "@/style/style.css";

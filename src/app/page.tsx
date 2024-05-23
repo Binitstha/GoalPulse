@@ -34,7 +34,6 @@ export default function Home() {
               <Image
                 src="/cover1.jpeg"
                 layout="fill"
-                objectFit="cover"
                 alt="coverImage"
                 className="rounded-xl absolute scale-[1.22] -z-10 transition-all duration-700"
               />
