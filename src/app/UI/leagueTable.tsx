@@ -11,7 +11,7 @@ export default function LeagueTable({ leagueData }: LeagueTableProps) {
       <table className="w-full ">
         <thead>
           <tr className="w-full">
-            <th className="font-normal text-start w-64">Club</th>
+            <th className="font-normal text-start w-72">Club</th>
             <th className="font-normal text-center w-9">MP</th>
             <th className="font-normal text-center w-9">W</th>
             <th className="font-normal text-center w-9">D</th>
@@ -25,7 +25,7 @@ export default function LeagueTable({ leagueData }: LeagueTableProps) {
         <tbody className="leading-8">
           {leagueData.map((team, index) => (
             <tr className="border-t-2" key={index}>
-              <td className="flex gap-2 justify-start items-center"><div className="w-5">{team.position}</div><Image className="w-5 h-5" src={team.team.crest} alt={team.team.tla} width={100} height={100}/><div>{team.team.name}</div></td>
+              <td className="flex gap-3 justify-start items-center"><div className="w-5">{team.position}</div><Image className="w-5 h-5" src={team.team.crest} alt={team.team.tla} width={100} height={100}/><div>{team.team.name}</div></td>
               <td className="text-center">{team.playedGames}</td>
               <td className="text-center">{team.won}</td>
               <td className="text-center">{team.draw}</td>

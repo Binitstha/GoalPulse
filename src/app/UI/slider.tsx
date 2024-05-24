@@ -2,7 +2,7 @@
 import { FaChevronLeft, FaArrowRightLong, FaChevronRight } from "react-icons/fa6";
 import React, { useState } from "react";
 import clsx from "clsx";
-import { sports_results } from "@/types/match";
+import { sports_results } from "@/types/matchResult";
 import Matches from "@/components/Matches";
 
 interface MatchSliderProps {

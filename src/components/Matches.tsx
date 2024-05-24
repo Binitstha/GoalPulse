@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import "@/style/style.css";
-import { Game } from "@/types/match";
+import { Game } from "@/types/matchResult";
 import Link from "next/link";
 
 interface MatchesProps {
@@ -18,7 +18,7 @@ const Matches: React.FC<MatchesProps> = ({ game }) => {
             <Image
               src={game.teams[0].thumbnail}
               alt={game.teams[0].name}
-              className="w-7"
+              className="w-7 "
               width={50}
               height={50}
             />
