@@ -1,59 +1,58 @@
-// components/MatchSlider.tsx
-
-import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
+'use client'
+import { FaChevronLeft, FaArrowRightLong, FaChevronRight } from "react-icons/fa6";
 import React, { useState } from "react";
-import { Match } from "../../types/match"; // Adjust the import path as needed
-import { MatchCard } from "../../components/Matches";
 import clsx from "clsx";
+import { sports_results } from "@/types/match";
+import Matches from "@/components/Matches";
 
 interface MatchSliderProps {
-  matches: Match[];
+  matchData: sports_results;
 }
 
-const MatchSlider: React.FC<MatchSliderProps> = ({ matches }) => {
+const MatchSlider: React.FC<MatchSliderProps> = ({ matchData }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToNextSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === matches.length - 3 ? 0 : prevIndex + 3
+      prevIndex === matchData.games.length - 5 ? 0 : prevIndex + 1
     );
   };
 
   const goToPrevSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? matches.length - 3 : prevIndex - 3
+      prevIndex === 0 ? matchData.games.length - 5 : prevIndex - 1
     );
   };
 
   return (
-    <div className="relative flex gap-5 w-full overflow-visible justify-center items-center ">
+    <div className="flex relative gap-5 w-full overflow-visible justify-center items-center">
       <button
-        className={clsx(`absolute left-0 rounded-full shadow-md p-3`, {
+        className={clsx(`absolute left-[-2rem] flex justify-center items-center h-32 w-8  p-3 z-10`, {
           hidden: currentIndex === 0,
         })}
         onClick={goToPrevSlide}
       >
-        <FaArrowLeftLong />
+        <FaChevronLeft />
       </button>
-      <div className=" overflow-hidden w-[72rem] p-3">
+      <div className="overflow-hidden w-full py-3">
         <div
-          className="flex gap-4 w-1/3 transition-transform p-3 duration-500 transform"
-          style={{ transform: `translateX(-${currentIndex * 97.5}%)` }}
+          className="flex gap-4 w-full transition-transform p-3 duration-500 transform"
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
-          {matches.map((match, index) => (
-            <div key={index} className="flex-none w-full">
-              <MatchCard match={match} />
+          {matchData.games.map((game, index) => (
+            <div key={index} className=" w-[30rem]">
+              <Matches game={game} />
             </div>
           ))}
         </div>
       </div>
       <button
-        className={clsx(`absolute right-0 rounded-full shadow-md p-3`, {
-          hidden: currentIndex === matches.length - 3,
+        className={clsx(`absolute right-[-2rem] flex justify-center items-center h-32 w-8  p-3 z-10`, {
+          hidden: currentIndex === matchData.games.length - 5,
         })}
         onClick={goToNextSlide}
       >
-        <FaArrowRightLong />
+        <FaChevronRight />
       </button>
     </div>
   );

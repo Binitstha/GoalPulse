@@ -1,17 +1,17 @@
 // src/lib/index.ts
 import { leagueStandings } from "@/types/leagueStanding";
 
+const api_key = process.env.FOOTBALL_ORG_KEY;
 
-
-export const matches = async () => {
+export const leagueStandingData = async (): Promise<leagueStandings> => {
   const response = await fetch(
-    "https://api.football-data.org/v4/competitions/PL/standings",
-    { headers: { "X-Auth-Token": "f7df7abbc1c84acdab28c5aafd614c1b" } }
+    "https://api.football-data.org/v4/competitions/BL1/standings",
+    { headers: { "X-Auth-Token": api_key ?? "" } }
   );
 
   if (!response.ok) {
     throw new Error(`HTTP response error ${response.status}`);
   }
-  const data = await response.json()
-  return data
+  const data = await response.json();
+  return data;
 };

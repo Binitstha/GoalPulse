@@ -1,85 +1,80 @@
-"use client";
-import { useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
-import matchData from "@/../a"; // Adjust the import path as needed
 import "@/style/style.css";
-import MatchSlider from "../app/UI/slider";
+import { Game } from "@/types/match";
+import Link from "next/link";
 
-interface MatchCardProps {
-  match: Match;
+interface MatchesProps {
+  game: Game;
 }
 
-export const MatchCard: React.FC<MatchCardProps> = ({ match }) => {
-  const { time, teams, league } = match;
-  if (!teams) {
-    return;
-  }
-
+const Matches: React.FC<MatchesProps> = ({ game }) => {
   return (
-    <div className="card shadow-lg w-[22rem] flex flex-col gap-3 p-4 rounded-lg">
-      <div className="flex justify-between">
-        <div className="text-slate-600 text-sm">{league.name}</div>
+    <div className="shadow-lg relative flex gap-3 p-3 rounded-lg w-[28.3rem]">
+      <span className="absolute text-gray-500 top-1">{game.tournament}</span>
+      <div className="gap-3 p-3 flex border-r-2 flex-col justify-center items-center">
+        <div className="gap-2 w-[14rem] flex justify-between items-center">
+          <div className="flex gap-2 w-full justify-start items-center">
+            <Image
+              src={game.teams[0].thumbnail}
+              alt={game.teams[0].name}
+              className="w-7"
+              width={50}
+              height={50}
+            />
+            <span className="text-ellipsis text-nowrap">
+              {game.teams[0].name}
+            </span>
+          </div>
+          <span className="text-nowrap w-fit text-center">
+            {game.teams[0].score}
+          </span>
+        </div>
+        <div className="gap-2 w-[14rem] flex justify-between items-center">
+          <div className="flex gap-2 w-full justify-start items-center">
+            <Image
+              src={game.teams[1].thumbnail}
+              alt={game.teams[1].name}
+              className="w-7"
+              width={50}
+              height={50}
+            />
+            <span className="text-ellipsis text-nowrap">
+              {game.teams[1].name}
+            </span>
+          </div>
+          <span className="text-nowrap w-fit text-center">
+            {game.teams[1].score}
+          </span>
+        </div>
       </div>
-      <div className="teams gap-3 flex justify-center items-center">
-        <div className="team w-[7rem] flex flex-col justify-center items-center">
-          <Image
-            src={teams.home?.img}
-            alt={teams.home?.name}
-            width={50}
-            height={50}
-          />
-          <span className="text-ellipsis text-nowrap w-full overflow-clip text-center">
-            {teams.home?.name}
-          </span>
+      <div className="highlights p-2 flex flex-col gap-2 justify-center items-center w-40">
+        <div className="flex justify-between flex-col items-center">
+          <div className="text-slate-600 text-sm">{game.status}</div>
+          <div className="text-slate-600 text-sm">{game.date}</div>
         </div>
-        <div className="versus">vs</div>
-        <div className="team w-[7rem] flex flex-col justify-center items-center">
-          <Image
-            src={teams.away?.img}
-            alt={teams.away?.name}
-            width={50}
-            height={50}
-          />
-          <span className="text-ellipsis text-nowrap w-full overflow-clip text-center">
-            {teams.away?.name}
-          </span>
-        </div>
+        {game.video_highlights && (
+          <Link
+            href={game.video_highlights.link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="relative rounded-md overflow-hidden">
+              <Image
+                src={game.video_highlights.thumbnail}
+                alt="Video Highlights"
+                width={200}
+                height={100}
+              />
+              <span className="absolute right-0 bottom-0 bg-transparent backdrop-blur-2xl w-12 text-white text-sm rounded-sm flex justify-center items-center">
+                {game.video_highlights.duration}
+              </span>
+            </div>
+          </Link>
+        )}
       </div>
     </div>
   );
 };
 
-const Home: React.FC = () => {
-  const [scheduledMatch, setScheduledMatch] = useState<Match[]>([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response: Match[] = matchData.data.map((item: any) => ({
-          ...item,
-          round_name: item.round_name || "",
-          week: item.week || "",
-          info: item.info || "",
-          attendance: item.attendance || "",
-        })); // Access the data array from the imported object
-        setScheduledMatch(response);
-      } catch (error) {
-        console.error("Error fetching scheduled matches:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  if (!scheduledMatch.length) {
-    return <div>Loading...</div>; // Or any other loading indicator
-  }
-
-  return (
-    <>
-      <MatchSlider matches={scheduledMatch} />
-    </>
-  );
-};
-
-export default Home;
+export default Matches;

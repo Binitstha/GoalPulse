@@ -1,5 +1,5 @@
 // types.ts
-export type SportsResult = {
+export type sports_results = {
   title: string;
   league: string;
   thumbnail: string;
@@ -7,12 +7,13 @@ export type SportsResult = {
 };
 
 export type Game = {
-  tournament?: string; // Optional since it's not present in all games
-  stage?: string; // Optional since it's not present in all games
+  tournament?: string;
+  stage?: string;
   status: string;
+  stadium: string;
   date: string;
-  time?: string; // Optional since it's not present in all games
-  video_highlights?: VideoHighlight; // Optional since it's not present in all games
+  time?: string;
+  video_highlights?: VideoHighlight;
   teams: Team[];
 };
 
@@ -24,11 +25,10 @@ export type VideoHighlight = {
 
 export type Team = {
   name: string;
-  score?: string; // Optional since it's not present in all games
+  score?: string;
   thumbnail: string;
 };
 
-// The main type to represent the JSON structure
 export type MatchResponse = {
-  sports_results: SportsResult;
+  sports_results: sports_results[];
 };

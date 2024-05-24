@@ -8,10 +8,14 @@ const nextConfig = {
       protocol: 'https',
       hostname: 'assets.goal.com'
     },
-  {
-    protocol:'https',
-    hostname: 'crests.football-data.org'
-  }]
+    {
+      protocol: 'https',
+      hostname: 'crests.football-data.org'
+    },
+    {
+      protocol: 'https',
+      hostname: 'serpapi.com'
+    }]
   },
 };
 
