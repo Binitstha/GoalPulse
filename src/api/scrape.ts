@@ -1,4 +1,4 @@
-import scrapper from "@/lib/scrapper";
+import { newsScrapper } from "@/lib/scrapper";
 import { unstable_noStore as noStore } from "next/cache";
 
 export default async function scrape() {
@@ -10,7 +10,7 @@ export default async function scrape() {
   noStore();
 
   try {
-    const article = await scrapper(url);
+    const article = await newsScrapper(url);
     return article;
   } catch (err) {
     console.log("Error while scrapping data.");

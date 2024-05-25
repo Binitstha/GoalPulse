@@ -1,145 +1,111 @@
 {
-  "title": "Premier League",
-  "rankings": "Matchday 38 of 38",
-  "thumbnail": "https://serpapi.com/searches/664f936a9c449d1d69f353b7/images/4747a957a6676ae567709944d1323ef12988be80986d946fed2c454e096feabb.png",
-  "games": [
+  "count": 10,
+  "filters": {
+    "season": "2021",
+    "limit": 10
+  },
+  "competition": {
+    "id": 2019,
+    "name": "Serie A",
+    "code": "SA",
+    "type": "LEAGUE",
+    "emblem": "https://crests.football-data.org/SA.png"
+  },
+  "season": {
+    "id": 757,
+    "startDate": "2021-08-21",
+    "endDate": "2022-05-22",
+    "currentMatchday": 37,
+    "winner": null,
+    "stages": ["REGULAR_SEASON"]
+  },
+  "scorers": [
     {
-      "tournament": "Premier League",
-      "stadium": "Emirates Stadium",
-      "status": "FT",
-      "date": "Sun, May 19",
-      "video_highlights": {
-        "link": "https://www.youtube.com/watch?v=XOpKDGn0FPs&feature=onebox",
-        "thumbnail": "https://serpapi.com/searches/664f936a9c449d1d69f353b7/images/4747a957a6676ae54c874ded0b504a1862878b91ec78a4329462c117bf67d4fd9374ad06a93985de22ee2657d3da6d2c4ecd8d83a0fa7fbd.jpeg",
-        "duration": "11:19"
+      "player": {
+        "id": 2076,
+        "name": "Ciro Immobile",
+        "firstName": "Ciro",
+        "lastName": "Immobile",
+        "dateOfBirth": "1990-02-20",
+        "nationality": "Italy",
+        "position": "Offence",
+        "shirtNumber": null,
+        "lastUpdated": "2021-10-13T08:03:51Z"
       },
-      "teams": [
-        {
-          "name": "Arsenal",
-          "score": "2",
-          "thumbnail": "https://serpapi.com/searches/664f936a9c449d1d69f353b7/images/4747a957a6676ae54c874ded0b504a1828d96e855a6896410774976bcd4f43f3adaf90540e3faf9109186f3845bfbe0d.png"
-        },
-        {
-          "name": "Everton",
-          "score": "1",
-          "thumbnail": "https://serpapi.com/searches/664f936a9c449d1d69f353b7/images/4747a957a6676ae54c874ded0b504a1828d96e855a6896416f00883ad4b6fe918f12da40464ea69e575abca21245907e.png"
-        }
-      ]
+      "team": {
+        "id": 110,
+        "name": "SS Lazio",
+        "shortName": "Lazio",
+        "tla": "LAZ",
+        "crest": "https://crests.football-data.org/110.svg",
+        "address": "Via di Santa Cornelia, 1000 Formello 00060",
+        "website": "http://www.sslazio.it",
+        "founded": 1900,
+        "clubColors": "White / Sky Blue",
+        "venue": "Stadio Olimpico",
+        "lastUpdated": "2020-11-26T02:19:41Z"
+      },
+      "goals": 27,
+      "assists": 2,
+      "penalties": 7
     },
     {
-      "tournament": "Premier League",
-      "stadium": "Etihad Stadium",
-      "status": "FT",
-      "date": "Sun, May 19",
-      "video_highlights": {
-        "link": "https://www.youtube.com/watch?v=Tb2L57NUuYM&feature=onebox",
-        "thumbnail": "https://serpapi.com/searches/664f936a9c449d1d69f353b7/images/4747a957a6676ae54c874ded0b504a1896f1f132f1d760a2797bceb755c23e3cd8e9da3dfd499e829f1301e0c10986dcef279afc0841f703.jpeg",
-        "duration": "14:34"
+      "player": {
+        "id": 82002,
+        "name": "Dušan Vlahović",
+        "firstName": "Dušan",
+        "lastName": null,
+        "dateOfBirth": "2000-01-28",
+        "nationality": "Serbia",
+        "position": "Offence",
+        "shirtNumber": null,
+        "lastUpdated": "2020-09-07T21:10:05Z"
       },
-      "teams": [
-        {
-          "name": "Man City",
-          "score": "3",
-          "thumbnail": "https://serpapi.com/searches/664f936a9c449d1d69f353b7/images/4747a957a6676ae54c874ded0b504a18d870df5eda2bb09aa7b23e97b09ad6511c4b61b77de8d57249fbf309b7f11cd5.png"
-        },
-        {
-          "name": "West Ham",
-          "score": "1",
-          "thumbnail": "https://serpapi.com/searches/664f936a9c449d1d69f353b7/images/4747a957a6676ae54c874ded0b504a18d870df5eda2bb09ae867ed2317dabe5acec27c62b388af946ca2244b0095ad8d.png"
-        }
-      ]
+      "team": {
+        "id": 109,
+        "name": "Juventus FC",
+        "shortName": "Juventus",
+        "tla": "JUV",
+        "crest": "https://crests.football-data.org/109.svg",
+        "address": "Corso Galileo Ferraris, 32 Torino 10128",
+        "website": "http://www.juventus.com",
+        "founded": 1897,
+        "clubColors": "White / Black",
+        "venue": "Allianz Stadium",
+        "lastUpdated": "2020-11-26T02:19:40Z"
+      },
+      "goals": 24,
+      "assists": 3,
+      "penalties": 5
     },
     {
-      "tournament": "Premier League",
-      "stadium": "Gtech Community Stadium",
-      "status": "FT",
-      "date": "Sun, May 19",
-      "video_highlights": {
-        "link": "https://www.youtube.com/watch?v=YuKooDaN5gQ&feature=onebox",
-        "thumbnail": "https://serpapi.com/searches/664f936a9c449d1d69f353b7/images/4747a957a6676ae54c874ded0b504a1864d4b7cbe1d2543a0104d118de52473f7aa937228c7495d7f581dcf9c0f31399ee8c7cf502082c4e.jpeg",
-        "duration": "19:4"
+      "player": {
+        "id": 3220,
+        "name": "Lautaro Martínez",
+        "firstName": "Lautaro Javier",
+        "lastName": null,
+        "dateOfBirth": "1997-08-22",
+        "nationality": "Argentina",
+        "position": "Offence",
+        "shirtNumber": null,
+        "lastUpdated": "2020-09-07T21:10:27Z"
       },
-      "teams": [
-        {
-          "name": "Brentford",
-          "score": "2",
-          "thumbnail": "https://serpapi.com/searches/664f936a9c449d1d69f353b7/images/4747a957a6676ae54c874ded0b504a18d86c589b4b1e811a07e1d0e9c2a8a73925293130aa235a3b31caf974c88867fa.png"
-        },
-        {
-          "name": "Newcastle",
-          "score": "4",
-          "thumbnail": "https://serpapi.com/searches/664f936a9c449d1d69f353b7/images/4747a957a6676ae54c874ded0b504a18d86c589b4b1e811a364d6d31a3f14afc7c992a940418b2202b4c0369bec7c499.png"
-        }
-      ]
-    },
-    {
-      "tournament": "Premier League",
-      "stadium": "Stamford Bridge",
-      "status": "FT",
-      "date": "Sun, May 19",
-      "video_highlights": {
-        "link": "https://www.youtube.com/watch?v=7d7TS7JI2oY&feature=onebox",
-        "thumbnail": "https://serpapi.com/searches/664f936a9c449d1d69f353b7/images/4747a957a6676ae54c874ded0b504a18ba8fad2bc59c9b23d33ad18084a54babb929296b4ad7d6b54f78e24164c2a4ff3749a889005c076a.jpeg",
-        "duration": "15:14"
+      "team": {
+        "id": 108,
+        "name": "FC Internazionale Milano",
+        "shortName": "Inter",
+        "tla": "INT",
+        "crest": "https://crests.football-data.org/108.png",
+        "address": "Corso Vittorio Emanuele II 9 Milano 20122",
+        "website": "http://www.inter.it",
+        "founded": 1908,
+        "clubColors": "Blue / Black",
+        "venue": "Stadio Giuseppe Meazza",
+        "lastUpdated": "2021-11-24T14:55:58Z"
       },
-      "teams": [
-        {
-          "name": "Chelsea",
-          "score": "2",
-          "thumbnail": "https://serpapi.com/searches/664f936a9c449d1d69f353b7/images/4747a957a6676ae54c874ded0b504a1852330d53a4bfdc5725fe0976707bf42194771d8675c0bbbf7ca0206b3a968046.png"
-        },
-        {
-          "name": "Bournemouth",
-          "score": "1",
-          "thumbnail": "https://serpapi.com/searches/664f936a9c449d1d69f353b7/images/4747a957a6676ae54c874ded0b504a1852330d53a4bfdc57b9753029498f4606c6287a0240b8410d6bf626c81ec8905b.png"
-        }
-      ]
-    },
-    {
-      "tournament": "Premier League",
-      "stadium": "Selhurst Park",
-      "status": "FT",
-      "date": "Sun, May 19",
-      "video_highlights": {
-        "link": "https://www.youtube.com/watch?v=LYJIE7moy9w&feature=onebox",
-        "thumbnail": "https://serpapi.com/searches/664f936a9c449d1d69f353b7/images/4747a957a6676ae54c874ded0b504a18dfb0cb22b1b34bfd6891034da32382a7a52f3f30e6496c8dafcb4374d3a22988045a73b8d9ff66cb.jpeg",
-        "duration": "14:14"
-      },
-      "teams": [
-        {
-          "name": "Crystal Palace",
-          "score": "5",
-          "thumbnail": "https://serpapi.com/searches/664f936a9c449d1d69f353b7/images/4747a957a6676ae54c874ded0b504a181f427a8e6f3b1d87a35bcca127b8548f3a3e2f9846eda63a876e8af754bb7b84.png"
-        },
-        {
-          "name": "Aston Villa",
-          "score": "0",
-          "thumbnail": "https://serpapi.com/searches/664f936a9c449d1d69f353b7/images/4747a957a6676ae54c874ded0b504a181f427a8e6f3b1d87daaffa0a4b0e1a2799adb579de015f8ff783520710613084.png"
-        }
-      ]
-    },
-    {
-      "tournament": "Premier League",
-      "stadium": "Turf Moor",
-      "status": "FT",
-      "date": "Sun, May 19",
-      "video_highlights": {
-        "link": "https://www.youtube.com/watch?v=CGsZB0UYytI&feature=onebox",
-        "thumbnail": "https://serpapi.com/searches/664f936a9c449d1d69f353b7/images/4747a957a6676ae54c874ded0b504a18f3d7a21229d3b71cb6bcd517d1277fe15e157df8c4fe9fee90b9d05386b893659408be1c7b691cfd.jpeg",
-        "duration": "12:6"
-      },
-      "teams": [
-        {
-          "name": "Burnley",
-          "score": "1",
-          "thumbnail": "https://serpapi.com/searches/664f936a9c449d1d69f353b7/images/4747a957a6676ae54c874ded0b504a18c26617533cbcf25756928d88f3f5089cc8098938dda27e0e4e334d5fa9f0fc2a.png"
-        },
-        {
-          "name": "Nottm Forest",
-          "score": "2",
-          "thumbnail": "https://serpapi.com/searches/664f936a9c449d1d69f353b7/images/4747a957a6676ae54c874ded0b504a18c26617533cbcf257c909176aa771a9b8d6855ddc65dc22478c4cd8e7f3cbeefc.png"
-        }
-      ]
+      "goals": 21,
+      "assists": 3,
+      "penalties": 3
     }
   ]
 }
