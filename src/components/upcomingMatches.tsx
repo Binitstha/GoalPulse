@@ -9,14 +9,14 @@ interface matchDataProps {
 const upcomingMatches: React.FC<matchDataProps> = async ({ matchData }) => {
   return (
     <>
-      <div className="w-[28rem]">
+      <div className="">
         <p className="text-xl mb-2">Upcoming Matches</p>
         <div className=" flex flex-col gap-4">
           {matchData.games ? (
             matchData.games.map((game, index) => (
               <div
                 key={index}
-                className="w-[10rem] h-[7rem]"
+                className="w-[20rem] shadow-lg rounded-lg"
               >
                 <Matches game={game} />
               </div>

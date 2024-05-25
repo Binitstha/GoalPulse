@@ -40,8 +40,10 @@ const MatchSlider: React.FC<MatchSliderProps> = ({ matchData }) => {
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {matchData.games.map((game, index) => (
-            <div key={index} className=" w-[30rem]">
+            <div key={index} className=" shadow-lg relative flex gap-3 p-3 rounded-lg  border-red-400 w-[40rem]">
+              <div className="w-[26.67rem]">
               <Matches game={game} />
+              </div>
             </div>
           ))}
         </div>

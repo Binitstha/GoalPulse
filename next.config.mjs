@@ -15,6 +15,11 @@ const nextConfig = {
     {
       protocol: 'https',
       hostname: 'serpapi.com'
+    },
+    {
+      protocol:
+        'https',
+      hostname: 'dimg-pa.googleapis.com'
     }]
   },
 };

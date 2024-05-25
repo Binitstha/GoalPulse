@@ -1,9 +1,12 @@
-import { MatchResponse } from "@/types/match";
+import { MatchResponse } from "@/types/matchResult";
+import { upcomingMatchResponse } from "@/types/upcomingMatches";
 import { getJson } from "serpapi";
 
 const API_KEY = process.env.SERPAPI_KEY;
 
-const matchData = async (query: string): Promise<MatchResponse> => {
+const matchData = async (
+  query: string
+): Promise<MatchResponse | upcomingMatchResponse> => {
   if (!API_KEY) {
     throw new Error("API key is missing");
   }
@@ -16,7 +19,10 @@ const matchData = async (query: string): Promise<MatchResponse> => {
       },
       (data: any) => {
         if (data && data.sports_results) {
-          resolve(data.sports_results as MatchResponse);
+          if (query.includes("results"))
+            resolve(data.sports_results as MatchResponse);
+          else if (query.includes("upcoming matches"))
+            resolve(data.sports_results as upcomingMatchResponse);
         } else {
           reject(new Error("No sports results found"));
         }

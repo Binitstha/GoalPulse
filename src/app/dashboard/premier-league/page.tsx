@@ -6,15 +6,16 @@ import { MatchResponse } from "@/types/matchResult";
 import { upcomingMatchResponse } from "@/types/upcomingMatches";
 import MatchSlider from "@/app/UI/slider";
 import UpcomingMatches from "@/components/upcomingMatches";
+import Stats from "@/components/stats";
 
 export default async function Page() {
   // const data = await leagueStandingData();
-  const matchResultdataResponse: MatchResponse = await matchData(
-    "premier league match results"
-  );
-  const upcomingmatchdataResponse: upcomingMatchResponse = await matchData(
-    "saudi pro upcoming matches"
-  );
+  const matchResultdataResponse = (await matchData(
+    "saudi league match results"
+  )) as MatchResponse;
+  const upcomingmatchdataResponse = (await matchData(
+    "saudi league upcoming matches"
+  )) as upcomingMatchResponse;
 
   const leagueData: Table[] = data.standings[0].table;
   return (
@@ -29,8 +30,9 @@ export default async function Page() {
             <h1 className="text-lg">League table</h1>
             <LeagueTable leagueData={leagueData} />
           </section>
+          <section><Stats/></section>
           <section>
-            <UpcomingMatches matchData = {upcomingmatchdataResponse}/>
+            <UpcomingMatches matchData={upcomingmatchdataResponse} />
           </section>
         </div>
       </div>

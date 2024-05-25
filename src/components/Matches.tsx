@@ -10,11 +10,11 @@ interface MatchesProps {
 
 const Matches: React.FC<MatchesProps> = ({ game }) => {
   return (
-    <div className="shadow-lg relative flex gap-3 p-3 rounded-lg w-[28.3rem]">
+    <div className="flex">
       <span className="absolute text-gray-500 top-1">{game.tournament}</span>
-      <div className="gap-3 p-3 flex border-r-2 flex-col justify-center items-center">
-        <div className="gap-2 w-[14rem] flex justify-between items-center">
-          <div className="flex gap-2 w-full justify-start items-center">
+      <div className="gap-3 p-3 flex w-[65%] border-r-2 flex-col h-28 justify-end items-start">
+        <div className="gap-2 flex w-full justify-between items-center">
+          <div className="flex gap-2 justify-start  items-center">
             <Image
               src={game.teams[0].thumbnail}
               alt={game.teams[0].name}
@@ -26,12 +26,10 @@ const Matches: React.FC<MatchesProps> = ({ game }) => {
               {game.teams[0].name}
             </span>
           </div>
-          <span className="text-nowrap w-fit text-center">
-            {game.teams[0].score}
-          </span>
+          <span className="text-nowrap text-center">{game.teams[0].score}</span>
         </div>
-        <div className="gap-2 w-[14rem] flex justify-between items-center">
-          <div className="flex gap-2 w-full justify-start items-center">
+        <div className="gap-2 w-full flex justify-between items-center">
+          <div className="flex gap-2 justify-start items-center">
             <Image
               src={game.teams[1].thumbnail}
               alt={game.teams[1].name}
@@ -43,12 +41,10 @@ const Matches: React.FC<MatchesProps> = ({ game }) => {
               {game.teams[1].name}
             </span>
           </div>
-          <span className="text-nowrap w-fit text-center">
-            {game.teams[1].score}
-          </span>
+          <span className="text-nowrap text-center">{game.teams[1].score}</span>
         </div>
       </div>
-      <div className="highlights p-2 flex flex-col gap-2 justify-center items-center w-40">
+      <div className="highlights p-2 flex flex-col gap-2 justify-center items-center">
         <div className="flex justify-between flex-col items-center">
           <div className="text-slate-600 text-sm">{game.status}</div>
           <div className="text-slate-600 text-sm">{game.date}</div>
