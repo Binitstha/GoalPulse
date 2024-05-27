@@ -9,6 +9,8 @@ import UpcomingMatches from "@/components/upcomingMatches";
 import Stats from "@/components/stats";
 import { Suspense } from "react";
 import Loading from "@/app/Loading";
+import statsData from "@/lib/stats";
+import { statData } from "@/types/stat";
 
 export default async function Page() {
   // const data = await leagueStandingData();
@@ -18,6 +20,8 @@ export default async function Page() {
   const upcomingmatchdataResponse = (await matchData(
     "saudi league upcoming matches"
   )) as upcomingMatchResponse;
+
+  const scorersData:statData = await statsData()
 
   const leagueData: Table[] = data.standings[0].table;
   return (
@@ -34,7 +38,7 @@ export default async function Page() {
             <LeagueTable leagueData={leagueData} />
           </section>
           <section>
-            <Stats />
+            <Stats data={scorersData}/>
           </section>
           <section>
             <UpcomingMatches matchData={upcomingmatchdataResponse} />
