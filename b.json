@@ -1,111 +1,98 @@
-{
-  "count": 10,
-  "filters": {
-    "season": "2021",
-    "limit": 10
+  count: 10,
+  filters: { season: '2023', limit: 10 },
+  competition: {
+    id: 2014,
+    name: 'Primera Division',
+    code: 'PD',
+    type: 'LEAGUE',
+    emblem: 'https://crests.football-data.org/PD.png'
   },
-  "competition": {
-    "id": 2019,
-    "name": "Serie A",
-    "code": "SA",
-    "type": "LEAGUE",
-    "emblem": "https://crests.football-data.org/SA.png"
+  season: {
+    id: 1577,
+    startDate: '2023-08-13',
+    endDate: '2024-05-26',
+    currentMatchday: 38,
+    winner: null
   },
-  "season": {
-    "id": 757,
-    "startDate": "2021-08-21",
-    "endDate": "2022-05-22",
-    "currentMatchday": 37,
-    "winner": null,
-    "stages": ["REGULAR_SEASON"]
-  },
-  "scorers": [
+  scorers: [
     {
-      "player": {
-        "id": 2076,
-        "name": "Ciro Immobile",
-        "firstName": "Ciro",
-        "lastName": "Immobile",
-        "dateOfBirth": "1990-02-20",
-        "nationality": "Italy",
-        "position": "Offence",
-        "shirtNumber": null,
-        "lastUpdated": "2021-10-13T08:03:51Z"
-      },
-      "team": {
-        "id": 110,
-        "name": "SS Lazio",
-        "shortName": "Lazio",
-        "tla": "LAZ",
-        "crest": "https://crests.football-data.org/110.svg",
-        "address": "Via di Santa Cornelia, 1000 Formello 00060",
-        "website": "http://www.sslazio.it",
-        "founded": 1900,
-        "clubColors": "White / Sky Blue",
-        "venue": "Stadio Olimpico",
-        "lastUpdated": "2020-11-26T02:19:41Z"
-      },
-      "goals": 27,
-      "assists": 2,
-      "penalties": 7
+      player: [Object],
+      team: [Object],
+      playedMatches: 36,
+      goals: 24,
+      assists: 8,
+      penalties: 7
     },
     {
-      "player": {
-        "id": 82002,
-        "name": "Dušan Vlahović",
-        "firstName": "Dušan",
-        "lastName": null,
-        "dateOfBirth": "2000-01-28",
-        "nationality": "Serbia",
-        "position": "Offence",
-        "shirtNumber": null,
-        "lastUpdated": "2020-09-07T21:10:05Z"
-      },
-      "team": {
-        "id": 109,
-        "name": "Juventus FC",
-        "shortName": "Juventus",
-        "tla": "JUV",
-        "crest": "https://crests.football-data.org/109.svg",
-        "address": "Corso Galileo Ferraris, 32 Torino 10128",
-        "website": "http://www.juventus.com",
-        "founded": 1897,
-        "clubColors": "White / Black",
-        "venue": "Allianz Stadium",
-        "lastUpdated": "2020-11-26T02:19:40Z"
-      },
-      "goals": 24,
-      "assists": 3,
-      "penalties": 5
+      player: [Object],
+      team: [Object],
+      playedMatches: 35,
+      goals: 23,
+      assists: 6,
+      penalties: null
     },
     {
-      "player": {
-        "id": 3220,
-        "name": "Lautaro Martínez",
-        "firstName": "Lautaro Javier",
-        "lastName": null,
-        "dateOfBirth": "1997-08-22",
-        "nationality": "Argentina",
-        "position": "Offence",
-        "shirtNumber": null,
-        "lastUpdated": "2020-09-07T21:10:27Z"
-      },
-      "team": {
-        "id": 108,
-        "name": "FC Internazionale Milano",
-        "shortName": "Inter",
-        "tla": "INT",
-        "crest": "https://crests.football-data.org/108.png",
-        "address": "Corso Vittorio Emanuele II 9 Milano 20122",
-        "website": "http://www.inter.it",
-        "founded": 1908,
-        "clubColors": "Blue / Black",
-        "venue": "Stadio Giuseppe Meazza",
-        "lastUpdated": "2021-11-24T14:55:58Z"
-      },
-      "goals": 21,
-      "assists": 3,
-      "penalties": 3
+      player: [Object],
+      team: [Object],
+      playedMatches: 32,
+      goals: 19,
+      assists: 6,
+      penalties: 1
+    },
+    {
+      player: [Object],
+      team: [Object],
+      playedMatches: 35,
+      goals: 19,
+      assists: 8,
+      penalties: 4
+    },
+    {
+      player: [Object],
+      team: [Object],
+      playedMatches: 34,
+      goals: 17,
+      assists: 2,
+      penalties: 3
+    },
+    {
+      player: [Object],
+      team: [Object],
+      playedMatches: 33,
+      goals: 16,
+      assists: 2,
+      penalties: 1
+    },
+    {
+      player: [Object],
+      team: [Object],
+      playedMatches: 34,
+      goals: 16,
+      assists: 6,
+      penalties: 4
+    },
+    {
+      player: [Object],
+      team: [Object],
+      playedMatches: 34,
+      goals: 15,
+      assists: 2,
+      penalties: null
+    },
+    {
+      player: [Object],
+      team: [Object],
+      playedMatches: 29,
+      goals: 15,
+      assists: 6,
+      penalties: 1
+    },
+    {
+      player: [Object],
+      team: [Object],
+      playedMatches: 27,
+      goals: 15,
+      assists: 1,
+      penalties: 4
     }
   ]
-}

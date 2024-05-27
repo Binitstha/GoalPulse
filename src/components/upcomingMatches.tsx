@@ -16,7 +16,7 @@ const upcomingMatches: React.FC<matchDataProps> = async ({ matchData }) => {
             matchData.games.map((game, index) => (
               <div
                 key={index}
-                className="w-[20rem] shadow-lg rounded-lg"
+                className="w-[20rem] shadow-lg relative rounded-lg p-3 pt-6"
               >
                 <Matches game={game} />
               </div>
@@ -27,7 +27,6 @@ const upcomingMatches: React.FC<matchDataProps> = async ({ matchData }) => {
             </>
           )}
         </div>
-        <div>{JSON.stringify(matchData.game_spotlight)}</div>
       </div>
     </>
   );

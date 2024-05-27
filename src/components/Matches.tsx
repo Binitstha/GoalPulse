@@ -3,6 +3,7 @@ import Image from "next/image";
 import "@/style/style.css";
 import { Game } from "@/types/matchResult";
 import Link from "next/link";
+import { MdOutlineStadium } from "react-icons/md";
 
 interface MatchesProps {
   game: Game;
@@ -12,7 +13,7 @@ const Matches: React.FC<MatchesProps> = ({ game }) => {
   return (
     <div className="flex">
       <span className="absolute text-gray-500 top-1">{game.tournament}</span>
-      <div className="gap-3 p-3 flex w-[65%] border-r-2 flex-col h-28 justify-end items-start">
+      <div className="gap-3 p-3 flex w-[65%] border-r-2 flex-col justify-end items-start">
         <div className="gap-2 flex w-full justify-between items-center">
           <div className="flex gap-2 justify-start  items-center">
             <Image
@@ -43,11 +44,16 @@ const Matches: React.FC<MatchesProps> = ({ game }) => {
           </div>
           <span className="text-nowrap text-center">{game.teams[1].score}</span>
         </div>
+        <div className="w-full flex justify-center items-center gap-2 text-gray-500">
+          <MdOutlineStadium />
+          <p className="text-ellipsis text-nowrap overflow-hidden">{game.stadium}</p>
+        </div>
       </div>
-      <div className="highlights p-2 flex flex-col gap-2 justify-center items-center">
+      <div className="highlights p-2 flex flex-col min-w-[8rem] gap-2 justify-center items-center">
         <div className="flex justify-between flex-col items-center">
           <div className="text-slate-600 text-sm">{game.status}</div>
           <div className="text-slate-600 text-sm">{game.date}</div>
+          <div className="text-slate-600 text-sm">{game.time}</div>
         </div>
         {game.video_highlights && (
           <Link
@@ -59,8 +65,8 @@ const Matches: React.FC<MatchesProps> = ({ game }) => {
               <Image
                 src={game.video_highlights.thumbnail}
                 alt="Video Highlights"
-                width={200}
-                height={100}
+                width={150}
+                height={75}
               />
               <span className="absolute right-0 bottom-0 bg-transparent backdrop-blur-2xl w-12 text-white text-sm rounded-sm flex justify-center items-center">
                 {game.video_highlights.duration}
