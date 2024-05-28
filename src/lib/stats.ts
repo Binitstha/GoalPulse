@@ -11,6 +11,7 @@ const statsData = async (): Promise<statData> => {
     throw new Error(`HTTP response error ${response.status}`);
   }
   const data = await response.json();
+  console.log(data)
   return data.scorers;
 };
 
