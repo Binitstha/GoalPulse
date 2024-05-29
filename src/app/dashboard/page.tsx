@@ -7,7 +7,6 @@ export default function Page() {
       <main className="flex flex-col gap-5 my-10">
         <section className="flex justify-between">
           <News />
-          <UpcomingMatches />
         </section>
       </main>
     </>

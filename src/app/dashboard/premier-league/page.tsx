@@ -1,3 +1,4 @@
+// pages/index.tsx or wherever the Page component is located
 import LeagueTable from "@/app/UI/leagueTable";
 import { data } from "@/../a";
 import { Table } from "@/types/leagueStanding";
@@ -10,20 +11,21 @@ import Stats from "@/components/stats";
 import { Suspense } from "react";
 import Loading from "@/app/Loading";
 import statsData from "@/lib/stats";
-import { statData } from "@/types/stat";
+import { PlayerStats } from "@/types/stat";
 
 export default async function Page() {
-  // const data = await leagueStandingData();
   const matchResultdataResponse = (await matchData(
     "english league sport match results"
   )) as MatchResponse;
+
   const upcomingmatchdataResponse = (await matchData(
     "saudi league upcoming matches"
   )) as upcomingMatchResponse;
 
-  const scorersData:statData = await statsData()
+  const scorersData: PlayerStats[] = await statsData();
 
   const leagueData: Table[] = data.standings[0].table;
+
   return (
     <>
       <Suspense fallback={<Loading />} />
@@ -38,7 +40,7 @@ export default async function Page() {
             <LeagueTable leagueData={leagueData} />
           </section>
           <section>
-            <Stats data={scorersData}/>
+            <Stats data={scorersData} />
           </section>
           <section>
             <UpcomingMatches matchData={upcomingmatchdataResponse} />

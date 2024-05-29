@@ -5,11 +5,11 @@ import clsx from "clsx";
 import { sports_results } from "@/types/matchResult";
 import Matches from "@/components/Matches";
 
-interface MatchSliderProps {
+type MatchSliderProps = {
   matchData: sports_results;
 }
 
-const MatchSlider: React.FC<MatchSliderProps> = ({ matchData }) => {
+const MatchSlider = ({ matchData }: MatchSliderProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToNextSlide = () => {
@@ -36,8 +36,8 @@ const MatchSlider: React.FC<MatchSliderProps> = ({ matchData }) => {
       </button>
       <div className="overflow-hidden w-full py-3">
         <div
-          className="flex gap-4 w-full transition-transform p-3 duration-500 transform"
-          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          className="flex gap-4 w-full scroll-smooth scroll transition-transform p-3 duration-500 transform"
+          style={{ transform: `translateX(-${currentIndex * 90}%)` }}
         >
           {matchData.games.map((game, index) => (
             <div key={index} className=" shadow-lg relative flex gap-3 p-3 rounded-lg  border-red-400 w-[40rem]">

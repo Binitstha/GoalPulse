@@ -1,12 +1,11 @@
 import { sports_results } from "@/types/upcomingMatches";
-import React from "react";
 import Matches from "./Matches";
 
-interface matchDataProps {
+type matchDataProps = {
   matchData: sports_results;
-}
+};
 
-const upcomingMatches: React.FC<matchDataProps> = async ({ matchData }) => {
+const upcomingMatches = async ({ matchData }: matchDataProps) => {
   return (
     <>
       <div className="">

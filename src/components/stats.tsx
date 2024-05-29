@@ -1,40 +1,48 @@
-import statsData from "@/lib/stats";
-import { statData } from "@/types/stat";
+// components/stats.tsx
+import { PlayerStats } from "@/types/stat";
 import Image from "next/image";
-import { Scorers } from "@/types/stat";
 
-const stats = async ({ data }: { data: statData }) => {
-  if(!data){
-    return (<><p>no score data available</p></>)
+const Stats = ({ data }: { data: PlayerStats[] }) => {
+  if (!data || data.length === 0) {
+    return (
+      <>
+        <p>No score data available</p>
+      </>
+    );
   }
+
   return (
     <>
-      <h1>TOP SCORRER</h1>
-      <section className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {data.scorers.map((scorer: Scorers, index: number) => (
-          <div key={index} className="card shadow-lg p-4 rounded-lg">
-            <div className="flex items-center gap-4">
-              <Image
-                src={scorer.team[0].crest}
-                alt={scorer.team[0].name}
-                className="w-16 h-16"
-              />
-              <div>
-                <h2 className="text-xl font-bold">{scorer.player[0].name}</h2>
-                <p className="text-sm">{scorer.team[0].name}</p>
+      <h1 className="text-center">TOP SCORER</h1>
+      <section className="rounded-xl shadow-lg w-fit max-w-64">
+        <div className="grid grid-cols-1 gap-4 p-3">
+          {data.map((scorer, index) => (
+            <div key={scorer.player.id}>
+              <div className="items-center flex justify-between p-3 gap-4">
+                <div className="flex gap-2 justify-start items-center">
+                  <div>{index + 1}</div>
+                  <div>
+                    <Image
+                      src={scorer.team.crest}
+                      alt={scorer.team.name}
+                      className="w-7"
+                      width={50}
+                      height={50}
+                    />
+                  </div>
+                  <div>
+                    <p>{scorer.player.name}</p>
+                    <p className="text-slate-600">{scorer.team.name}</p>
+                  </div>
+                </div>
+                <div>{scorer.goals}</div>
               </div>
             </div>
-            <div className="mt-4">
-              <p>Goals: {scorer.goals}</p>
-              <p>Matches: {scorer.playedMatches}</p>
-              <p>Assists: {scorer.assists}</p>
-              <p>Penalties: {scorer.penalties ?? 0}</p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </section>
     </>
   );
 };
 
-export default stats;
+export default Stats;
