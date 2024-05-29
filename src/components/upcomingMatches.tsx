@@ -1,4 +1,4 @@
-import { sports_results } from "@/types/upcomingMatches";
+import { sports_results } from "@/types/matchResult";
 import Matches from "./Matches";
 
 type matchDataProps = {

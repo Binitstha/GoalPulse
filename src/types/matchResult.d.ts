@@ -2,6 +2,8 @@
 export type sports_results = {
   title: string;
   league: string;
+  game_spotlight?: Game[];
+  rankings?: string | null;
   thumbnail: string;
   games: Game[];
 };
@@ -30,5 +32,5 @@ export type Team = {
 };
 
 export type MatchResponse = {
-  sports_results: sports_results[];
+  sports_results: sports_results;
 };

@@ -3,8 +3,6 @@ import LeagueTable from "@/app/UI/leagueTable";
 import { data } from "@/../a";
 import { Table } from "@/types/leagueStanding";
 import matchData from "@/lib/matches";
-import { MatchResponse } from "@/types/matchResult";
-import { upcomingMatchResponse } from "@/types/upcomingMatches";
 import MatchSlider from "@/app/UI/slider";
 import UpcomingMatches from "@/components/upcomingMatches";
 import Stats from "@/components/stats";
@@ -14,13 +12,13 @@ import statsData from "@/lib/stats";
 import { PlayerStats } from "@/types/stat";
 
 export default async function Page() {
-  const matchResultdataResponse = (await matchData(
+  const matchResultdataResponse = await matchData(
     "english league sport match results"
-  )) as MatchResponse;
+  );
 
-  const upcomingmatchdataResponse = (await matchData(
+  const upcomingmatchdataResponse = await matchData(
     "saudi league upcoming matches"
-  )) as upcomingMatchResponse;
+  );
 
   const scorersData: PlayerStats[] = await statsData();
 
