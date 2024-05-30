@@ -5,15 +5,15 @@ import { Game } from "@/types/matchResult";
 import Link from "next/link";
 import { MdOutlineStadium } from "react-icons/md";
 
-interface MatchesProps {
+type MatchesProps = {
   game: Game;
-}
+};
 
-const Matches: React.FC<MatchesProps> = ({ game }) => {
+const Matches = ({ game }: MatchesProps) => {
   return (
-    <div className="flex">
+    <div className="flex ">
       <span className="absolute text-gray-500 top-1">{game.tournament}</span>
-      <div className="gap-3 p-3 flex w-[65%] border-r-2 flex-col justify-end items-start">
+      <div className="gap-3 p-3 flex w-[100%] border-r-2 flex-col justify-end items-start">
         <div className="gap-2 flex w-full justify-between items-center">
           <div className="flex gap-2 justify-start  items-center">
             <Image
@@ -46,13 +46,15 @@ const Matches: React.FC<MatchesProps> = ({ game }) => {
         </div>
         <div className="w-full flex justify-center items-center gap-2 text-gray-500">
           <MdOutlineStadium />
-          <p className="text-ellipsis text-nowrap overflow-hidden">{game.stadium}</p>
+          <p className="text-ellipsis text-nowrap overflow-hidden text-sm">
+            {game.stadium}
+          </p>
         </div>
       </div>
-      <div className="highlights p-2 flex flex-col min-w-[8rem] gap-2 justify-center items-center">
+      <div className="highlights p-2 flex flex-col w-full gap-2 justify-center items-center">
         <div className="flex justify-between flex-col items-center">
           <div className="text-slate-600 text-sm">{game.status}</div>
-          <div className="text-slate-600 text-sm">{game.date}</div>
+          <div className="text-slate-600 text-sm text-center">{game.date}</div>
           <div className="text-slate-600 text-sm">{game.time}</div>
         </div>
         {game.video_highlights && (

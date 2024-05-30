@@ -7,7 +7,7 @@ import PremierLeagueIcon from "../../../public/LeagueIcon/premier-league";
 import Laliga from "../../../public/LeagueIcon/laliga";
 import Ligue1Icon from "../../../public/LeagueIcon/ligue-1";
 import BundesligaIcon from "../../../public/LeagueIcon/bundesliga";
-import seriaAlogo from "../../../public/LeagueIcon/serieALogo";
+import SeriaALogo from "../../../public/LeagueIcon/serieALogo";
 
 export default function Navlinks() {
   const navlinks = [
@@ -18,23 +18,23 @@ export default function Navlinks() {
     },
     {
       name: "La liga",
-      href: "/dashboard/premierLeague",
+      href: "/dashboard/la-liga",
       icon: Laliga,
     },
     {
       name: "Ligue-1",
-      href: "/dashboard/premierLeague",
+      href: "/dashboard/Ligue-1",
       icon: Ligue1Icon,
     },
     {
       name: "Bundesliga",
-      href: "/dashboard/premierLeague",
+      href: "/dashboard/Bundesliga",
       icon: BundesligaIcon,
     },
     {
       name: "Seria A",
-      href: "/dashboard/seriaA",
-      icon: seriaAlogo,
+      href: "/dashboard/seria-A",
+      icon: SeriaALogo,
     },
   ];
 
@@ -52,7 +52,7 @@ export default function Navlinks() {
               `flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3`
             )}
           >
-              <link.icon />
+            <LinkIcon />
             <p className={`hidden md:block`}>{link.name}</p>
           </Link>
         );

@@ -37,10 +37,10 @@ const MatchSlider = ({ matchData }: MatchSliderProps) => {
       <div className="overflow-hidden w-full py-3">
         <div
           className="flex gap-4 w-full scroll-smooth scroll transition-transform p-3 duration-500 transform"
-          style={{ transform: `translateX(-${currentIndex * 90}%)` }}
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {matchData.games.map((game, index) => (
-            <div key={index} className=" shadow-lg relative flex gap-3 p-3 rounded-lg  border-red-400 w-[40rem]">
+            <div key={index} className=" shadow-lg relative flex gap-3 p-3 rounded-lg  border-red-400">
               <div className="w-[26.67rem]">
               <Matches game={game} />
               </div>

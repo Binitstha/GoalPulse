@@ -1,6 +1,5 @@
 // pages/index.tsx or wherever the Page component is located
-import LeagueTable from "@/app/UI/leagueTable";
-import { data } from "@/../a";
+import LeagueTable from "@/components/leagueTable";
 import { Table } from "@/types/leagueStanding";
 import matchData from "@/lib/matches";
 import MatchSlider from "@/app/UI/slider";
@@ -10,23 +9,37 @@ import { Suspense } from "react";
 import Loading from "@/app/Loading";
 import statsData from "@/lib/stats";
 import { PlayerStats } from "@/types/stat";
+import { leagueStandingData } from "@/lib/leagueTable";
 
-export default async function Page() {
+type paramsProps = {
+  params: {
+    league: string;
+  };
+};
+export default async function Page({ params }: paramsProps) {
+  const leagueCode: Record<string, string> = {
+    "premier-league": "PL",
+    "seria-A": "SA",
+    "la-liga": "PD",
+    "Ligue-1": "FL1",
+    "Bundesliga": "BL1",
+  };
+
+  const { league } = params;
   const matchResultdataResponse = await matchData(
-    "english league sport match results"
+    `${league} league sport match results`
   );
 
   const upcomingmatchdataResponse = await matchData(
-    "saudi league upcoming matches"
+    `saudi league upcoming matches`
   );
 
-  const scorersData: PlayerStats[] = await statsData();
+  const leagueData: Table[] = await leagueStandingData(leagueCode[league]);
 
-  const leagueData: Table[] = data.standings[0].table;
+  const scorersData: PlayerStats[] = await statsData(leagueCode[league]);
 
   return (
     <>
-      <Suspense fallback={<Loading />} />
       <div className="my-10 flex flex-col gap-5">
         <section className="">
           <p>Matches</p>
@@ -34,7 +47,6 @@ export default async function Page() {
         </section>
         <div className="flex justify-between">
           <section className="flex flex-col gap-2">
-            <h1 className="text-lg">League table</h1>
             <LeagueTable leagueData={leagueData} />
           </section>
           <section>

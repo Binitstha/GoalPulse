@@ -1,4 +1,4 @@
-import { MatchResponse, sports_results } from "@/types/matchResult";
+import { sports_results } from "@/types/matchResult";
 import { getJson } from "serpapi";
 
 const API_KEY = process.env.SERPAPI_KEY;

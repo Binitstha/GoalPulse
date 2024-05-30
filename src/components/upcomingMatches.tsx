@@ -9,13 +9,13 @@ const upcomingMatches = async ({ matchData }: matchDataProps) => {
   return (
     <>
       <div className="">
-        <p className="text-xl mb-2">Upcoming Matches</p>
+        <p className="text-xl mb-2 text-center">Upcoming Matches</p>
         <div className=" flex flex-col gap-4">
           {matchData.games ? (
             matchData.games.map((game, index) => (
               <div
                 key={index}
-                className="w-[20rem] shadow-lg relative rounded-lg p-3 pt-6"
+                className="w-[18rem] shadow-lg relative rounded-lg p-3 pt-6"
               >
                 <Matches game={game} />
               </div>

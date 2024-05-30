@@ -1,9 +1,9 @@
 import { PlayerStats } from "@/types/stat";
 
-const statsData = async (): Promise<PlayerStats[]> => {
+const statsData = async (league: string): Promise<PlayerStats[]> => {
   const api_key = process.env.FOOTBALL_ORG_KEY;
   const response = await fetch(
-    "http://api.football-data.org/v4/competitions/PD/scorers",
+    `http://api.football-data.org/v4/competitions/${league}/scorers`,
     { headers: { "X-Auth-Token": api_key ?? "" } }
   );
 
