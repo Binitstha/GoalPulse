@@ -4,7 +4,7 @@ import { getJson } from "serpapi";
 const API_KEY = process.env.SERPAPI_KEY;
 
 const matchData = async (
-  query: string
+  query: string,
 ): Promise<sports_results> => {
   if (!API_KEY) {
     throw new Error("API key is missing");

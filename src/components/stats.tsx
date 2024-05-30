@@ -13,7 +13,7 @@ const Stats = ({ data }: { data: PlayerStats[] }) => {
 
   return (
     <>
-      <h1 className="text-center">TOP SCORER</h1>
+      <h1 className="text-center">Top Scorers</h1>
       <section className="rounded-xl shadow-lg w-fit max-w-[18rem]">
         <div className="grid grid-cols-1 gap-1 p-3">
           {data.map((scorer, index) => (
