@@ -42,7 +42,7 @@ export default async function Page({ params }: paramsProps) {
     <>
       <div className="my-10 flex flex-col gap-5">
         <section className="">
-          <p>Matches</p>
+          <p className="text-center text-lg">MATCHES</p>
           <MatchSlider matchData={matchResultdataResponse} />
         </section>
         <div className="flex justify-between">

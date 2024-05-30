@@ -11,15 +11,15 @@ type MatchesProps = {
 
 const Matches = ({ game }: MatchesProps) => {
   return (
-    <div className="flex ">
-      <span className="absolute text-gray-500 top-1">{game.tournament}</span>
+    <div className="flex h-36 gap-2">
+      <span className="absolute  text-gray-500 top-1">{game.tournament}</span>
       <div className="gap-3 p-3 flex w-[100%] border-r-2 flex-col justify-end items-start">
         <div className="gap-2 flex w-full justify-between items-center">
           <div className="flex gap-2 justify-start  items-center">
             <Image
               src={game.teams[0].thumbnail}
               alt={game.teams[0].name}
-              className="w-7 "
+              className="w-7 text-[0.3rem] flex justify-center items-center"
               width={50}
               height={50}
             />
@@ -34,7 +34,7 @@ const Matches = ({ game }: MatchesProps) => {
             <Image
               src={game.teams[1].thumbnail}
               alt={game.teams[1].name}
-              className="w-7"
+              className="w-7 text-[0.3rem] flex justify-center items-center"
               width={50}
               height={50}
             />
@@ -51,7 +51,7 @@ const Matches = ({ game }: MatchesProps) => {
           </p>
         </div>
       </div>
-      <div className="highlights p-2 flex flex-col w-full gap-2 justify-center items-center">
+      <div className="highlights p-2 flex flex-col w-56 gap-2 justify-center items-center">
         <div className="flex justify-between flex-col items-center">
           <div className="text-slate-600 text-sm">{game.status}</div>
           <div className="text-slate-600 text-sm text-center">{game.date}</div>
@@ -66,7 +66,8 @@ const Matches = ({ game }: MatchesProps) => {
             <div className="relative rounded-md overflow-hidden">
               <Image
                 src={game.video_highlights.thumbnail}
-                alt="Video Highlights"
+                alt="Video Highlights "
+                className="text-[0.3rem] flex justify-center items-center"
                 width={150}
                 height={75}
               />

@@ -8,7 +8,7 @@ type LeagueTableProps = {
 const LeagueTable = ({ leagueData }: LeagueTableProps) => {
   return (
     <>
-      <h1 className="text-lg text-center">League table</h1>
+      <h1 className="text-lg text-center">LEAGUE TABLE</h1>
       <div className="w-[40rem] p-3 shadow-sm rounded-lg bg-slate-50">
         <table className="w-full ">
           <thead>
