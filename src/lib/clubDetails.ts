@@ -1,14 +1,16 @@
 import { getJson } from "serpapi";
-import { knowledge_graph } from "@/types/clubDetail";
+import { knowledge_graph, top_stories } from "@/types/clubDetail";
 import { sports_results } from "@/types/matchResult";
 
 const API_KEY = process.env.SERPAPI_KEY;
 
-interface CombineResult extends sports_results, knowledge_graph {}
+interface CombineResult {
+  sports_results: sports_results;
+  knowledge_graph: knowledge_graph;
+  top_stories: top_stories;
+}
 
-const clubData = async (
-  query: string
-): Promise<knowledge_graph & sports_results> => {
+const clubData = async (query: string): Promise<CombineResult> => {
   if (!API_KEY) {
     throw new Error("API key is missing");
   }
@@ -20,14 +22,20 @@ const clubData = async (
         api_key: API_KEY,
       },
       (data: any) => {
-        if (data && data.sports_results) {
+        if (
+          data &&
+          data.sports_results &&
+          data.knowledge_graph &&
+          data.top_stories
+        ) {
           const combineResult: CombineResult = {
-            ...data.sports_results,
-            ...data.knowledge_graph,
+            sports_results: data.sports_results,
+            knowledge_graph: data.knowledge_graph,
+            top_stories: data.top_stories,
           };
           resolve(combineResult);
         } else {
-          reject(new Error("No sports results found"));
+          reject(new Error("Incomplete data found"));
         }
       }
     ).catch((error: any) => {
