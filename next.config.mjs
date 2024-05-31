@@ -20,7 +20,12 @@ const nextConfig = {
       protocol:
         'https',
       hostname: 'dimg-pa.googleapis.com'
-    }]
+    },
+    {
+      protocol: 'https',
+      hostname: 'ssl.gstatic.com'
+    }
+    ]
   },
 };
 

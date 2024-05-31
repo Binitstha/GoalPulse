@@ -7,7 +7,7 @@ const API_KEY = process.env.SERPAPI_KEY;
 interface CombineResult {
   sports_results: sports_results;
   knowledge_graph: knowledge_graph;
-  top_stories: top_stories;
+  top_stories: top_stories[];
 }
 
 const clubData = async (query: string): Promise<CombineResult> => {

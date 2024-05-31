@@ -1,6 +1,7 @@
 import Matches from "@/components/Matches";
 import TopStories from "@/components/topStories";
 import clubData from "@/lib/clubDetails";
+import { top_stories } from "@/types/clubDetail";
 import Image from "next/image";
 
 const Page = async ({
@@ -11,11 +12,13 @@ const Page = async ({
   const query = searchParams?.query || "";
 
   const clubDetail = await clubData(query);
+
+  const topStoriesData: top_stories[] = clubDetail.top_stories;
   return (
     <>
       <main className="my-10 flex flex-col gap-5">
         <div className="flex w-full justify-between h-full">
-          <section className="w-[40%] h-96 p-10 gap-5 flex flex-col justify-center items-center">
+          <section className="w-[100%] min-h-96 p-10 gap-10 flex flex-col justify-start items-center">
             <div className="flex flex-col justify-center items-center gap-5">
               <div className=" w-full flex justify-center gap-10  items-center">
                 <Image
@@ -49,7 +52,9 @@ const Page = async ({
                   <b>Founded:</b> {clubDetail.knowledge_graph.founded}
                 </p>
               </div>
-              <TopStories/>
+              <div className=" w-full border-2 flex flex-wrap gap-5">
+                <TopStories stories={topStoriesData} />
+              </div>
             </div>
           </section>
           <section className="w-[50%] h-fit flex justify-center items-center">
