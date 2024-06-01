@@ -1,12 +1,12 @@
 import News from "@/components/news";
 import matchData from "@/lib/matches";
-import MatchSlider from "../UI/slider";
+import MatchSlider from "./UI/slider";
 import UpcomingMatches from "@/components/upcomingMatches";
 
 const Page = async () => {
   const date = new Date();
   const matchResultdataResponse = await matchData(
-    `european football match ${date.getFullYear()} results`
+    `european footballs matches ${date.getFullYear()} results`
   );
   const upcomingmatchdataResponse = await matchData(
     `upcoming european football 2024 match schedules`

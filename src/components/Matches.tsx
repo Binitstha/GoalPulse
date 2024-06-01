@@ -11,11 +11,11 @@ type MatchesProps = {
 
 const Matches = ({ game }: MatchesProps) => {
   return (
-    <div className="flex h-36 gap-2">
-      <span className="absolute  text-gray-500 top-1">{game.tournament}</span>
+    <div className="flex h-36 gap-2 w-[26.67rem]">
+      <span className="absolute text-gray-500 top-1">{game.tournament}</span>
       <div className="gap-3 p-3 flex w-[100%] border-r-2 flex-col justify-end items-start">
         <div className="gap-2 flex w-full justify-between items-center">
-          <div className="flex gap-2 justify-start  items-center">
+          <div className="flex gap-2 justify-start items-center">
             <Image
               src={game.teams[0].thumbnail}
               alt={game.teams[0].name}
@@ -66,7 +66,7 @@ const Matches = ({ game }: MatchesProps) => {
             <div className="relative rounded-md overflow-hidden">
               <Image
                 src={game.video_highlights.thumbnail}
-                alt="Video Highlights "
+                alt="Video Highlights"
                 className="text-[0.3rem] flex justify-center items-center"
                 width={150}
                 height={75}

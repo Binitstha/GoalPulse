@@ -1,3 +1,4 @@
+import { unstable_noStore } from "next/cache";
 import puppeteer from "puppeteer";
 
 interface Articles {
@@ -7,6 +8,7 @@ interface Articles {
 }
 
 export const newsScrapper = async (url: string): Promise<Articles[]> => {
+  unstable_noStore()
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto(url);

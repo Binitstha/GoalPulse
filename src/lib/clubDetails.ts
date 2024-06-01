@@ -1,6 +1,7 @@
 import { getJson } from "serpapi";
 import { knowledge_graph, top_stories } from "@/types/clubDetail";
 import { sports_results } from "@/types/matchResult";
+import { unstable_noStore as no_store } from "next/cache";
 
 const API_KEY = process.env.SERPAPI_KEY;
 
@@ -11,6 +12,7 @@ interface CombineResult {
 }
 
 const clubData = async (query: string): Promise<CombineResult> => {
+  no_store()
   if (!API_KEY) {
     throw new Error("API key is missing");
   }

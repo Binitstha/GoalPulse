@@ -1,4 +1,5 @@
 import { sports_results } from "@/types/matchResult";
+import { unstable_noStore } from "next/cache";
 import { getJson } from "serpapi";
 
 const API_KEY = process.env.SERPAPI_KEY;
@@ -6,6 +7,7 @@ const API_KEY = process.env.SERPAPI_KEY;
 const matchData = async (
   query: string,
 ): Promise<sports_results> => {
+  unstable_noStore()
   if (!API_KEY) {
     throw new Error("API key is missing");
   }

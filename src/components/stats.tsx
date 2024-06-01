@@ -13,12 +13,11 @@ const Stats = ({ data }: { data: PlayerStats[] }) => {
 
   return (
     <>
-      <h1 className="text-center">Top Scorers</h1>
       <section className="rounded-xl shadow-lg w-fit max-w-[18rem]">
         <div className="grid grid-cols-1 gap-1 p-3">
           {data.map((scorer, index) => (
             <div key={scorer.player.id}>
-              <div className="items-center flex border-t-2  justify-between p-3 gap-4 ">
+              <div className="items-center flex  justify-between p-3 gap-4 hover:scale-105 transition-all duration-150">
                 <div className="flex gap-3 justify-start items-center">
                   <div>{index + 1}</div>
                   <div>

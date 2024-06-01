@@ -1,5 +1,5 @@
-import Avatar from "../UI/avatar";
-import Search from "../UI/search";
+import Avatar from "./UI/avatar";
+import Search from "./UI/search";
 import Link from "next/link";
 
 export default function TopBar() {

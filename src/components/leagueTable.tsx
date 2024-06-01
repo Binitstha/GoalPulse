@@ -8,7 +8,6 @@ type LeagueTableProps = {
 const LeagueTable = ({ leagueData }: LeagueTableProps) => {
   return (
     <>
-      <h1 className="text-lg text-center">League table</h1>
       <div className="w-[40rem] p-3 shadow-sm rounded-lg bg-slate-50">
         <table className="w-full ">
           <thead>
@@ -26,9 +25,9 @@ const LeagueTable = ({ leagueData }: LeagueTableProps) => {
           </thead>
           <tbody className="leading-8">
             {leagueData.map((team, index) => (
-              <tr className="border-t-2" key={index}>
+              <tr className="border-t-2 hover:scale-105 transition-all duration-150" key={index}>
                 <td className="flex gap-3 justify-start items-center">
-                  <div className="w-5">{team.position}</div>
+                  <div className="w-5 pl-1">{team.position}</div>
                   <Image
                     className="w-5 h-5"
                     src={team.team.crest}

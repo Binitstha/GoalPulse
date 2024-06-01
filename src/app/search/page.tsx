@@ -52,7 +52,7 @@ const Page = async ({
                   <b>Founded:</b> {clubDetail.knowledge_graph.founded}
                 </p>
               </div>
-              <div className=" w-full border-2 flex flex-wrap gap-5">
+              <div className=" w-full flex flex-wrap gap-5">
                 <TopStories stories={topStoriesData} />
               </div>
             </div>
@@ -60,7 +60,7 @@ const Page = async ({
           <section className="w-[50%] h-fit flex justify-center items-center">
             <div className=" flex flex-col gap-5">
               {clubDetail.sports_results.games.map((game, index) => (
-                <div key={index} className="relative shadow-md p-2 rounded-md">
+                <div key={index} className="hover:shadow-xl hover:scale-105 transition-all duration-150 relative shadow-md p-2 rounded-md">
                   <Matches game={game} />
                 </div>
               ))}
