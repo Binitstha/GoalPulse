@@ -1,7 +1,6 @@
 import LeagueTable from "@/components/leagueTable";
 import { Table } from "@/types/leagueStanding";
 import matchData from "@/lib/matches";
-import MatchSlider from "@/app/dashboard/UI/slider";
 import UpcomingMatches from "@/components/upcomingMatches";
 import Stats from "@/components/stats";
 import { Suspense } from "react";
@@ -15,6 +14,7 @@ import {
   StatsSkeleton,
   UpcomingMatchSkeletons,
 } from "@/app/dashboard/UI/Skeleton";
+import MatchSlider from "../UI/slider";
 
 type paramsProps = {
   params: {

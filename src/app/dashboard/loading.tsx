@@ -1,10 +1,13 @@
 import { DashboardSkeleton } from "./UI/Skeleton";
-const Page = () => {
+
+const loading = () => {
   return (
     <>
-      <DashboardSkeleton/>
+      <p>
+        <DashboardSkeleton />
+      </p>
     </>
   );
 };
 
-export default Page;
+export default loading;

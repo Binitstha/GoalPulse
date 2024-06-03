@@ -1,6 +1,7 @@
+import { exportTraceState } from "next/dist/trace";
 import React from "react";
 
-export const DashboardSkeleton = () => {
+export const LeagueSkeleton = () => {
   return (
     <>
       <div className="my-10 flex flex-col gap-5">
@@ -12,7 +13,7 @@ export const DashboardSkeleton = () => {
           <section className="flex flex-col gap-2">
             <h1 className="text-lg text-center">League table</h1>
 
-            <LeagueSkeleton />
+            <LeagueTableSkeleton />
           </section>
           <section>
             <h1 className="text-center">Top Scorers</h1>
@@ -75,7 +76,7 @@ export const MatchSliderSkeleton = () => {
   );
 };
 
-export const LeagueSkeleton = () => {
+export const LeagueTableSkeleton = () => {
   return (
     <div>
       <div className="w-[40rem] p-3 shadow-sm rounded-lg bg-slate-50">
@@ -94,20 +95,20 @@ export const LeagueSkeleton = () => {
             </tr>
           </thead>
         </table>
-        <div className="h-7 bg-gray-300 w-full my-2 rounded-sm animate-pulse"></div>
-        <div className="h-7 bg-gray-300 w-full my-2 rounded-sm animate-pulse"></div>
-        <div className="h-7 bg-gray-300 w-full my-2 rounded-sm animate-pulse"></div>
-        <div className="h-7 bg-gray-300 w-full my-2 rounded-sm animate-pulse"></div>
-        <div className="h-7 bg-gray-300 w-full my-2 rounded-sm animate-pulse"></div>
-        <div className="h-7 bg-gray-300 w-full my-2 rounded-sm animate-pulse"></div>
-        <div className="h-7 bg-gray-300 w-full my-2 rounded-sm animate-pulse"></div>
-        <div className="h-7 bg-gray-300 w-full my-2 rounded-sm animate-pulse"></div>
-        <div className="h-7 bg-gray-300 w-full my-2 rounded-sm animate-pulse"></div>
-        <div className="h-7 bg-gray-300 w-full my-2 rounded-sm animate-pulse"></div>
-        <div className="h-7 bg-gray-300 w-full my-2 rounded-sm animate-pulse"></div>
-        <div className="h-7 bg-gray-300 w-full my-2 rounded-sm animate-pulse"></div>
-        <div className="h-7 bg-gray-300 w-full my-2 rounded-sm animate-pulse"></div>
-        <div className="h-7 bg-gray-300 w-full my-2 rounded-sm animate-pulse"></div>
+        <div className="h-7 bg-gray-300 w-full my-2 rounded-md animate-pulse"></div>
+        <div className="h-7 bg-gray-300 w-full my-2 rounded-md animate-pulse"></div>
+        <div className="h-7 bg-gray-300 w-full my-2 rounded-md animate-pulse"></div>
+        <div className="h-7 bg-gray-300 w-full my-2 rounded-md animate-pulse"></div>
+        <div className="h-7 bg-gray-300 w-full my-2 rounded-md animate-pulse"></div>
+        <div className="h-7 bg-gray-300 w-full my-2 rounded-md animate-pulse"></div>
+        <div className="h-7 bg-gray-300 w-full my-2 rounded-md animate-pulse"></div>
+        <div className="h-7 bg-gray-300 w-full my-2 rounded-md animate-pulse"></div>
+        <div className="h-7 bg-gray-300 w-full my-2 rounded-md animate-pulse"></div>
+        <div className="h-7 bg-gray-300 w-full my-2 rounded-md animate-pulse"></div>
+        <div className="h-7 bg-gray-300 w-full my-2 rounded-md animate-pulse"></div>
+        <div className="h-7 bg-gray-300 w-full my-2 rounded-md animate-pulse"></div>
+        <div className="h-7 bg-gray-300 w-full my-2 rounded-md animate-pulse"></div>
+        <div className="h-7 bg-gray-300 w-full my-2 rounded-md animate-pulse"></div>
       </div>
     </div>
   );
@@ -117,14 +118,14 @@ export const StatsSkeleton = () => {
   return (
     <section className="rounded-xl shadow-md w-fit max-w-[18rem]">
       <div className="grid mx-auto grid-cols-1 gap-5 p-3 py-5">
-        <div className="h-10 animate-pulse w-64 bg-gray-300 rounded-sm"></div>
-        <div className="h-10 animate-pulse w-64 bg-gray-300 rounded-sm"></div>
-        <div className="h-10 animate-pulse w-64 bg-gray-300 rounded-sm"></div>
-        <div className="h-10 animate-pulse w-64 bg-gray-300 rounded-sm"></div>
-        <div className="h-10 animate-pulse w-64 bg-gray-300 rounded-sm"></div>
-        <div className="h-10 animate-pulse w-64 bg-gray-300 rounded-sm"></div>
-        <div className="h-10 animate-pulse w-64 bg-gray-300 rounded-sm"></div>
-        <div className="h-10 animate-pulse w-64 bg-gray-300 rounded-sm"></div>
+        <div className="h-10 animate-pulse w-64 bg-gray-300 rounded-md"></div>
+        <div className="h-10 animate-pulse w-64 bg-gray-300 rounded-md"></div>
+        <div className="h-10 animate-pulse w-64 bg-gray-300 rounded-md"></div>
+        <div className="h-10 animate-pulse w-64 bg-gray-300 rounded-md"></div>
+        <div className="h-10 animate-pulse w-64 bg-gray-300 rounded-md"></div>
+        <div className="h-10 animate-pulse w-64 bg-gray-300 rounded-md"></div>
+        <div className="h-10 animate-pulse w-64 bg-gray-300 rounded-md"></div>
+        <div className="h-10 animate-pulse w-64 bg-gray-300 rounded-md"></div>
       </div>
     </section>
   );
@@ -166,10 +167,50 @@ export const UpcomingMatchSkeleton = () => {
   );
 };
 
+export const DashboardSkeleton = () => {
+  return (
+    <>
+      <main className="flex flex-col gap-5 my-10">
+        <section>
+          <p className="text-xl">Matches results</p>
+          <MatchSliderSkeleton />
+        </section>
+        <section className="flex justify-between">
+          <div className="w-fit">
+            <NewsSkeletons />
+          </div>
+          <div className=" w-[50%] flex justify-center items-start ">
+            <div className="sticky top-[-22rem] w-fit">
+              <UpcomingMatchSkeletons />
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
+  );
+};
+
+export const NewsSkeletons = () => {
+  return (
+    <div className="w-fit">
+      <p className="text-xl">Latest news</p>
+      <div className="mt-3 flex flex-wrap gap-5 ">
+        <NewsSkeleton />
+        <NewsSkeleton />
+        <NewsSkeleton />
+        <NewsSkeleton />
+        <NewsSkeleton />
+      </div>
+    </div>
+  );
+};
+
 export const NewsSkeleton = () => {
   return (
-    <div>
-      <p>Loading</p>
+    <div className=" h-[20.65rem]  rounded-md shadow-md p-5 w-[25rem] grid gap-2">
+      <div className=" animate-pulse rounded-md w-full h-[12.7rem] bg-gray-300"></div>
+      <div className=" animate-pulse rounded-md w-full h-9 bg-gray-300 "></div>
+      <p className="animate-pulse rounded-md w-[30%] h-7 bg-gray-300"></p>
     </div>
   );
 };

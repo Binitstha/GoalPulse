@@ -1,5 +1,5 @@
-import TopBar from "../dashboard/topbar";
-import SideNav from "../dashboard/sidenav";
+import TopBar from "@/app/dashboard/topbar";
+import SideNav from "@/app/dashboard/sidenav";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
