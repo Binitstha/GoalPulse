@@ -7,12 +7,12 @@ const API_KEY = process.env.SERPAPI_KEY;
 const matchData = async (
   query: string,
 ): Promise<sports_results> => {
-  unstable_noStore()
+  unstable_noStore();
   if (!API_KEY) {
     throw new Error("API key is missing");
   }
 
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     getJson(
       {
         q: query,
@@ -20,13 +20,23 @@ const matchData = async (
       },
       (data: any) => {
         if (data && data.sports_results) {
-            resolve(data.sports_results as sports_results);
+          resolve(data.sports_results as sports_results);
         } else {
-          reject(new Error("No sports results found"));
+          resolve({
+            title: "",
+            league: "",
+            thumbnail: "",
+            games: []
+          } as sports_results);
         }
       }
-    ).catch((error: any) => {
-      reject(new Error(`Failed to fetch data: ${error.message}`));
+    ).catch(() => {
+      resolve({
+        title: "",
+        league: "",
+        thumbnail: "",
+        games: []
+      } as sports_results);
     });
   });
 };

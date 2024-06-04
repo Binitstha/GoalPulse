@@ -209,7 +209,7 @@ export const NewsSkeleton = () => {
   return (
     <div className=" h-[20.65rem]  rounded-md shadow-md p-5 w-[25rem] grid gap-2">
       <div className=" animate-pulse rounded-md w-full h-[12.7rem] bg-gray-300"></div>
-      <div className=" animate-pulse rounded-md w-full h-9 bg-gray-300 "></div>
+      <div className=" animate-pulse rounded-md w-full h-9 bg-gray-300"></div>
       <p className="animate-pulse rounded-md w-[30%] h-7 bg-gray-300"></p>
     </div>
   );

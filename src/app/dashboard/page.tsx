@@ -6,17 +6,16 @@ import { Suspense } from "react";
 import {
   MatchSliderSkeleton,
   NewsSkeletons,
-  UpcomingMatchSkeleton,
   UpcomingMatchSkeletons,
 } from "./UI/Skeleton";
 
 const Page = async () => {
   const date = new Date();
   const matchResultdataResponse = await matchData(
-    `europe footballs matches ${date.getFullYear()} results`
+    `european football matches ${date.getFullYear()} results`
   );
   const upcomingmatchdataResponse = await matchData(
-    `upcoming europe football 2024 match schedules`
+    `upcoming european football 2024 match schedules`
   );
 
   return (

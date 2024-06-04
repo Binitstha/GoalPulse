@@ -18,7 +18,7 @@ export default async function News() {
                   <Image
                     src={`${element.img}`}
                     alt="news image"
-                    className="w-[50rem]"
+                    className="w-[50rem] h-[12.7rem]"
                     width={1000}
                     height={1000}
                   />

@@ -12,7 +12,7 @@ export default function Sidenav() {
           <div className="mt-auto flex relative justify-start items-center gap-1">
             <Link href={'/dashboard'}>
               <div className="flex gap-2 justify-center items-center">
-                {/* <Image src='/logo.png' alt="logo" width={70}  height={70}/> */}
+                <Image src='/logo.png' alt="logo" width={70}  height={70}/>
                 <p>GoalPulse</p>
               </div>
             </Link>
