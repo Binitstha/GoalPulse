@@ -16,10 +16,11 @@ const Search = () => {
 
     const params = new URLSearchParams(searchParams);
 
+    console.log("params", params);
     if (searchValue) params.set("query", searchValue);
     else params.delete("query");
 
-    replace(`search?${params.toString()}`);
+    replace(`../search?${params.toString()}`);
   };
 
   return (
@@ -37,7 +38,7 @@ const Search = () => {
             placeholder="Search club..."
             required
             value={searchValue}
-              onChange={(e) => setSearchValue(e.target.value)}
+            onChange={(e) => setSearchValue(e.target.value)}
           />
           <button type="submit">
             <GiMagnifyingGlass className="absolute right-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />

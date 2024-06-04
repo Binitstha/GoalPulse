@@ -13,7 +13,6 @@ const upcomingMatches = async ({ matchData }: matchDataProps) => {
   return (
     <>
       <div className="">
-        <Suspense fallback={<UpcomingMatchSkeletons/>}>
           <div className=" flex flex-col gap-4">
             {matchData.games && matchData.games.length > 0  ? (
               matchData.games.map((game, index) => (
@@ -108,7 +107,6 @@ const upcomingMatches = async ({ matchData }: matchDataProps) => {
               </>
             )}
           </div>
-        </Suspense>
       </div>
     </>
   );

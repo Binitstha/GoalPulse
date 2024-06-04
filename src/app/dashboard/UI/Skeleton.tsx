@@ -217,8 +217,72 @@ export const NewsSkeleton = () => {
 
 export const StoriesSkeleton = () => {
   return (
-    <div>
-      <p>Loading</p>
+    <div className="flex hover:shadow-xl hover:scale-105 transition-all duration-150 flex-col gap-4 p-3 h-64 w-[45%] rounded-lg shadow-lg">
+      <div className=" gap-3 flex justify-center items-center">
+        <div className="w-[100%] flex flex-col gap-2">
+          <div className="bg-gray-300 animate-pulse rounded-md h-7 w-40"></div>
+          <div className="bg-gray-300 animate-pulse rounded-md h-20 w-full"></div>
+        </div>
+        <div className="w-48 h-40 overflow-hidden flex justify-center items-center">
+          <div className="w-28 bg-gray-300 animate-pulse rounded-md h-28"></div>
+        </div>
+      </div>
+      <div className="flex justify-start gap-2 items-center">
+        <div className="bg-gray-300 animate-pulse rounded-md h-7 w-20"></div>
+      </div>
     </div>
+  );
+};
+
+export const StoriesSkeletons = () => {
+  return (
+    <>
+      <StoriesSkeleton />
+      <StoriesSkeleton />
+      <StoriesSkeleton />
+      <StoriesSkeleton />
+      <StoriesSkeleton />
+      <StoriesSkeleton />
+    </>
+  );
+};
+
+export const SearchPageSkeleton = () => {
+  return (
+    <>
+      <div>
+        <main className="my-10 flex flex-col gap-5">
+          <div className="flex w-full justify-between h-full">
+            <section className="w-[100%] min-h-96 p-10 gap-8 flex flex-col justify-start items-center">
+              <div className="flex flex-col justify-center items-start gap-5 w-full">
+                <div className=" w-full flex justify-start gap-5  items-center">
+                  <div className="w-44 h-28 bg-gray-300 animate-pulse rounded-md"></div>
+                  <div className="w-[70%] grid gap-3">
+                    <div className=" h-12 w-72 bg-gray-300 animate-pulse rounded-md"></div>
+                    <div className="h-14 w-full bg-gray-300 animate-pulse rounded-md"></div>
+                  </div>
+                </div>
+                <div className=" animate-pulse bg-gray-300 h-5 w-56 rounded-md"></div>
+                <div className=" animate-pulse bg-gray-300 h-5 w-56 rounded-md"></div>
+                <div className=" animate-pulse bg-gray-300 h-5 w-56 rounded-md"></div>
+              </div>
+              <div className=" w-full flex flex-wrap gap-5">
+                <StoriesSkeletons/>
+              </div>
+            </section>
+            <section className="w-[50%] h-fit flex justify-center items-center">
+              <div className=" flex flex-col gap-5">
+                <MatchSkeleton />
+                <MatchSkeleton />
+                <MatchSkeleton />
+                <MatchSkeleton />
+                <MatchSkeleton />
+                <MatchSkeleton />
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </>
   );
 };

@@ -2,6 +2,8 @@ import Image from "next/image";
 import { top_stories } from "@/types/clubDetail";
 import { FaClock } from "react-icons/fa6";
 import Link from "next/link";
+import { Suspense } from "react";
+import { StoriesSkeletons } from "@/app/dashboard/UI/Skeleton";
 
 type stotiesProps = {
   stories: top_stories[];
@@ -10,6 +12,7 @@ type stotiesProps = {
 const Page = ({ stories }: stotiesProps) => {
   return (
     <>
+    <Suspense fallback={<StoriesSkeletons/>}>
       {stories &&
         stories.map((story, index) => (
           <div key={index} className="flex hover:shadow-xl hover:scale-105 transition-all duration-150 flex-col gap-4 p-3 h-64 w-[45%] rounded-lg shadow-lg">
@@ -27,7 +30,7 @@ const Page = ({ stories }: stotiesProps) => {
                   className="w-96 rounded-lg overflow-hidden"
                   width={100}
                   height={100}
-                ></Image>
+                  ></Image>
               </div>
             </div>
             <div className="flex justify-start gap-2 items-center">
@@ -36,6 +39,7 @@ const Page = ({ stories }: stotiesProps) => {
             </div>
           </div>
         ))}
+        </Suspense>
     </>
   );
 };
