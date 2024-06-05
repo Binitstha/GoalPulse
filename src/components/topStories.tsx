@@ -3,21 +3,23 @@ import { top_stories } from "@/types/clubDetail";
 import { FaClock } from "react-icons/fa6";
 import Link from "next/link";
 import { Suspense } from "react";
-import { StoriesSkeletons } from "@/app/dashboard/UI/Skeleton";
+import { StoriesSkeleton, StoriesSkeletons } from "@/app/(dashboard)/UI/Skeleton";
 
 type stotiesProps = {
   stories: top_stories[];
 };
 
-const Page = ({ stories }: stotiesProps) => {
+const Page = ({ stories }: stotiesProps): JSX.Element => {
   return (
     <>
     <Suspense fallback={<StoriesSkeletons/>}>
       {stories &&
         stories.map((story, index) => (
           <div key={index} className="flex hover:shadow-xl hover:scale-105 transition-all duration-150 flex-col gap-4 p-3 h-64 w-[45%] rounded-lg shadow-lg">
+                <Suspense fallback= {<StoriesSkeleton/>} >
             <div className=" gap-3 flex justify-center items-center">
               <div className="w-[100%]">
+
                 <p className="text-slate-500">{story.source}</p>
                 <Link href={story.link} target="_blank" className="h-28">
                   {story.title}
@@ -37,6 +39,7 @@ const Page = ({ stories }: stotiesProps) => {
               <FaClock />
               <p>{story.date}</p>
             </div>
+        </Suspense>
           </div>
         ))}
         </Suspense>

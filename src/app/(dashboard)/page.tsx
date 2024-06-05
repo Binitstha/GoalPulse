@@ -35,6 +35,8 @@ const Page = async () => {
           </div>
           <div className=" w-[50%] flex justify-center items-start ">
             <div className="sticky top-[-22rem] w-fit">
+              <p className="text-xl mb-2 text-center">Upcoming matches</p>
+
               <Suspense fallback={<UpcomingMatchSkeletons />}>
                 <UpcomingMatches matchData={upcomingmatchdataResponse} />
               </Suspense>

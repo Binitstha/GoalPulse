@@ -13,27 +13,27 @@ export default function Navlinks() {
   const navlinks = [
     {
       name: "premier league",
-      href: "/dashboard/premier-league",
+      href: "/premier-league",
       icon: PremierLeagueIcon,
     },
     {
       name: "La liga",
-      href: "/dashboard/la-liga",
+      href: "/la-liga",
       icon: Laliga,
     },
     {
       name: "Ligue-1",
-      href: "/dashboard/Ligue-1",
+      href: "/Ligue-1",
       icon: Ligue1Icon,
     },
     {
       name: "Bundesliga",
-      href: "/dashboard/Bundesliga",
+      href: "/Bundesliga",
       icon: BundesligaIcon,
     },
     {
       name: "Seria A",
-      href: "/dashboard/seria-A",
+      href: "/seria-A",
       icon: SeriaALogo,
     },
   ];

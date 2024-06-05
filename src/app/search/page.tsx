@@ -1,35 +1,53 @@
-"use client";  // This directive makes the entire file a client component
-
+import { Metadata } from 'next';
+import clubData from "@/lib/clubDetails";
+import { top_stories, knowledge_graph } from "@/types/clubDetail";
+import { sports_results } from '@/types/matchResult';
+import Image from "next/image";
 import Matches from "@/components/Matches";
 import TopStories from "@/components/topStories";
-import clubData from "@/lib/clubDetails";
-import { top_stories } from "@/types/clubDetail";
-import Image from "next/image";
-import { Suspense } from "react";
 import {
   SearchPageSkeleton,
-  StoriesSkeleton,
-  StoriesSkeletons,
-  UpcomingMatchSkeletons,
-} from "../dashboard/UI/Skeleton";
-import { useSearchParams } from "next/navigation";
+} from "../(dashboard)/UI/Skeleton";
+import { Suspense } from 'react';
 
-const Page = () => {
-  const searchParams = useSearchParams();
-  const query = searchParams?.get("query") || "";
+export const metadata: Metadata = {
+  title: 'Club Details',
+};
+
+const Page = async ({ searchParams }: { searchParams: { query: string } }) => {
+  const query = searchParams.query || '';
+
+  let clubDetail;
+  try {
+    clubDetail = await clubData(query);
+  } catch (error) {
+    console.error('Failed to fetch data:', error);
+    clubDetail = null;
+  }
+
+  if (!clubDetail) {
+    return <div>Error loading club details</div>;
+  }
+
+  const topStoriesData: top_stories[] = clubDetail.top_stories;
 
   return (
     <Suspense fallback={<SearchPageSkeleton />}>
-      <PageContent query={query} />
+      <PageContent clubDetail={clubDetail} topStoriesData={topStoriesData} />
     </Suspense>
   );
 };
 
-const PageContent = async ({ query }: { query: string }) => {
-  const clubDetail = await clubData(query);
+type PageContentProps = {
+  clubDetail: {
+    sports_results: sports_results;
+    knowledge_graph: knowledge_graph;
+    top_stories: top_stories[];
+  };
+  topStoriesData: top_stories[];
+}
 
-  const topStoriesData: top_stories[] = clubDetail.top_stories;
-
+const PageContent = ({ clubDetail, topStoriesData }: PageContentProps) => {
   return (
     <main className="my-10 flex flex-col gap-5">
       <div className="flex w-full justify-between h-full">
@@ -45,46 +63,43 @@ const PageContent = async ({ query }: { query: string }) => {
               />
               <div className="w-[70%] grid gap-3">
                 <p className="text-4xl">{clubDetail.sports_results.title}</p>
-                <p className="text-sm">{clubDetail.knowledge_graph.description}</p>
+                <p className="text-sm">
+                  {clubDetail.knowledge_graph.description}
+                </p>
               </div>
             </div>
             <div className="leading-loose w-full">
-              {clubDetail.knowledge_graph.headquarters && (
+              {clubDetail.knowledge_graph.leagues && (
                 <p>
                   <b>Leagues:</b> {clubDetail.knowledge_graph.leagues}
                 </p>
               )}
               <p>
-                {clubDetail.knowledge_graph &&
-                  clubDetail.knowledge_graph.headquarters && (
-                    <>
-                      <b>Headquarters:</b> {clubDetail.knowledge_graph.headquarters}
-                    </>
-                  )}
+                {clubDetail.knowledge_graph.headquarters && (
+                  <>
+                    <b>Headquarters:</b> {clubDetail.knowledge_graph.headquarters}
+                  </>
+                )}
               </p>
               <p>
                 <b>Founded:</b> {clubDetail.knowledge_graph.founded}
               </p>
             </div>
             <div className="w-full flex flex-wrap gap-5">
-              <Suspense fallback={<StoriesSkeletons />}>
-                <TopStories stories={topStoriesData} />
-              </Suspense>
+              <TopStories stories={topStoriesData} />
             </div>
           </div>
         </section>
         <section className="w-[50%] h-fit flex justify-center items-center">
           <div className="flex flex-col gap-5">
-            <Suspense fallback={<UpcomingMatchSkeletons />}>
-              {clubDetail.sports_results.games.map((game, index) => (
-                <div
-                  key={index}
-                  className="hover:shadow-xl hover:scale-105 transition-all duration-150 relative shadow-md p-2 rounded-md"
-                >
-                  <Matches game={game} />
-                </div>
-              ))}
-            </Suspense>
+            {clubDetail.sports_results.games.map((game, index) => (
+              <div
+                key={index}
+                className="hover:shadow-xl hover:scale-105 transition-all duration-150 relative shadow-md p-2 rounded-md"
+              >
+                <Matches game={game} />
+              </div>
+            ))}
           </div>
         </section>
       </div>

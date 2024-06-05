@@ -1,4 +1,4 @@
-import { UpcomingMatchSkeleton, UpcomingMatchSkeletons } from "@/app/dashboard/UI/Skeleton";
+import { UpcomingMatchSkeleton, UpcomingMatchSkeletons } from "@/app/(dashboard)/UI/Skeleton";
 import { sports_results } from "@/types/matchResult";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,7 +13,7 @@ const upcomingMatches = async ({ matchData }: matchDataProps) => {
   return (
     <>
       <div className="">
-          <div className=" flex flex-col gap-4">
+          <div className=" flex flex-col gap-4 mt-3">
             {matchData.games && matchData.games.length > 0  ? (
               matchData.games.map((game, index) => (
                 <div

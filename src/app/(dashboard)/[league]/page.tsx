@@ -13,7 +13,7 @@ import {
   MatchSkeleton,
   StatsSkeleton,
   UpcomingMatchSkeletons,
-} from "@/app/dashboard/UI/Skeleton";
+} from "@/app/(dashboard)/UI/Skeleton";
 import MatchSlider from "../UI/slider";
 
 type paramsProps = {
