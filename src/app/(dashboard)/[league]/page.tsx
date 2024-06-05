@@ -15,6 +15,7 @@ import {
   UpcomingMatchSkeletons,
 } from "@/app/(dashboard)/UI/Skeleton";
 import MatchSlider from "../UI/slider";
+import Breadcrumbs from "../UI/breadcrumb";
 
 type paramsProps = {
   params: {
@@ -24,7 +25,7 @@ type paramsProps = {
 export default async function Page({ params }: paramsProps) {
   const leagueCode: Record<string, string> = {
     "premier-league": "PL",
-    "Bundesliga": "BL1",
+    Bundesliga: "BL1",
     "seria-A": "SA",
     "la-liga": "PD",
     "Ligue-1": "FL1",
@@ -45,6 +46,16 @@ export default async function Page({ params }: paramsProps) {
 
   return (
     <>
+      <Breadcrumbs
+        breadcrumbs={[
+          { label: "dashboard", href: `/dashboard` },
+          {
+            label: league,
+            href: `/${league}`,
+            active: true,
+          },
+        ]}
+      />
       <div className="my-10 flex flex-col gap-5">
         <section className="">
           <Suspense fallback={<MatchSkeleton />}>

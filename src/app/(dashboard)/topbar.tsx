@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import Search from "./UI/search";
 import Link from "next/link";
+import Breadcrumb from "@/app/(dashboard)/UI/breadcrumb";
 
 export default function TopBar() {
   return (

@@ -6,12 +6,10 @@ import { FaClock } from "react-icons/fa6";
 
 export default async function News() {
   const data = await scrape();
-  console.log(data)
   return (
     <div className="w-fit">
       <p className="text-xl">Latest news</p>
       <div className="mt-3 flex flex-wrap gap-5 ">
-        <div>{JSON.stringify(data)}</div>
         {data ? (
           data.map((element, index) => (
             <div
@@ -44,8 +42,7 @@ export default async function News() {
           <div>
             <p>News not availabel at the moment</p>
           </div>
-        )
-        }
+        )}
       </div>
     </div>
   );
