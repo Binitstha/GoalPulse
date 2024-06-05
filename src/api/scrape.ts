@@ -13,6 +13,6 @@ export default async function scrape() {
     const article = await newsScrapper(url);
     return article;
   } catch (err) {
-    console.log("Error while scrapping data.");
+    console.log("Error while scrapping data.",err);
   }
 }
