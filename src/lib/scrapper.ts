@@ -9,7 +9,10 @@ interface Articles {
 
 export const newsScrapper = async (url: string): Promise<Articles[]> => {
   unstable_noStore()
-  const browser = await puppeteer.launch();
+  // const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    args: [`--disable-gpu`, `--disable-setuid-sandbox`, `--no-sandbox`, `--no-zygote`],
+  });
 
   const page = await browser.newPage();
   await page.goto(url);
