@@ -31,5 +31,3 @@ export const newsScrapper = async (url: string): Promise<Articles[]> => {
   await browser.close();
   return allArticles;
 };
-
-// export const 

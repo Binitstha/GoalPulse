@@ -4,7 +4,6 @@ import { sports_results } from "@/types/matchResult";
 import { unstable_noStore as no_store } from "next/cache";
 
 const API_KEY = process.env.SERPAPI_KEY;
-// console.log(API_KEY)
 
 interface CombineResult {
   sports_results: sports_results;

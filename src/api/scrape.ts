@@ -2,7 +2,7 @@ import { newsScrapper } from "@/lib/scrapper";
 import { unstable_noStore as noStore } from "next/cache";
 
 export default async function scrape() {
-  const url = process.env.NEXT_NEWS_URL;
+  const url = 'https://www.goal.com/en-in/news';
   if (!url) {
     console.error("url is not received");
     return;
