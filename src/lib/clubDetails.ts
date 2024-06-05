@@ -3,8 +3,7 @@ import { knowledge_graph, top_stories } from "@/types/clubDetail";
 import { sports_results } from "@/types/matchResult";
 import { unstable_noStore as no_store } from "next/cache";
 
-const API_KEY =
-  "88715e97df92077888adbaefbb83b5863dc277f85a3cb0e7e9c8afdfda6ae314";
+const API_KEY = process.env.SERPAPI_KEY;
 // console.log(API_KEY)
 
 interface CombineResult {
