@@ -8,10 +8,10 @@ interface Articles {
 }
 
 export const newsScrapper = async (url: string): Promise<Articles[]> => {
-  unstable_noStore();
+  unstable_noStore()
+  // const browser = await puppeteer.launch();
   const browser = await puppeteer.launch({
-    headless: true,
-    args: [`--no-sandbox`, `--headless`, `--disable-gpu`, `--disable-dev-shm-usage`],
+    args: [`--disable-gpu`, `--disable-setuid-sandbox`, `--no-sandbox`, `--no-zygote`],
   });
 
   const page = await browser.newPage();
