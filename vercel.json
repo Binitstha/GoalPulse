@@ -1,0 +1,12 @@
+{
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@vercel/node"
+      }
+    ],
+    "env": {
+      "AWS_LAMBDA_FUNCTION_VERSION": "true"
+    }
+  }
+  
