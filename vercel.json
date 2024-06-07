@@ -1,6 +1,6 @@
 {
     "functions": {
-      "api/scrape.ts": {
+      "/src/api/scrape.ts": {
         "memory": 1024,
         "maxDuration": 10
       }
