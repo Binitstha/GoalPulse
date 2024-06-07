@@ -1,13 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack: (config) => {
-    config.module.rules.push({
-      test: /chrome-aws-lambda\/build\/puppeteer\/lib\/.*$/,
-      use: 'ignore-loader',
-    });
-
-    return config;
-  },
   images: {
     remotePatterns: [{
       protocol: 'https',
