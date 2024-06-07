@@ -2,9 +2,10 @@
 const nextConfig = {
   webpack: (config) => {
     config.module.rules.push({
-      test: /\.map$/,
-      loader: 'ignore-loader',
+      test: /chrome-aws-lambda\/build\/puppeteer\/lib\/.*$/,
+      use: 'ignore-loader',
     });
+
     return config;
   },
   images: {

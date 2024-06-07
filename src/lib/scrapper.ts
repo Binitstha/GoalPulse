@@ -1,6 +1,6 @@
 import { unstable_noStore } from "next/cache";
-import puppeteer from "puppeteer-core";
 import chromium from "chrome-aws-lambda";
+import puppeteer from "puppeteer-core";
 
 interface Articles {
   title: string;
