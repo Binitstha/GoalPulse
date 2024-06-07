@@ -16,19 +16,32 @@ import {
 } from "@/app/(dashboard)/UI/Skeleton";
 import MatchSlider from "../UI/slider";
 import Breadcrumbs from "../UI/breadcrumb";
+import type { Metadata, ResolvingMetadata } from "next";
 
 type paramsProps = {
   params: {
     league: string;
   };
 };
+
+export async function generateMetadata(
+  { params }: paramsProps,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const league = params.league;
+
+  return {
+    title: `stats of ${league}`,
+  };
+}
+
 export default async function Page({ params }: paramsProps) {
   const leagueCode: Record<string, string> = {
     "premier-league": "PL",
-    Bundesliga: "BL1",
-    "seria-A": "SA",
+    "Bundesliga": "BL1",
     "la-liga": "PD",
     "Ligue-1": "FL1",
+    "serie-A": "SA",
   };
 
   const { league } = params;

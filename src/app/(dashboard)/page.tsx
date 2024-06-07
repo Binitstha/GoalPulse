@@ -12,10 +12,10 @@ import {
 const Page = async () => {
   const date = new Date();
   const matchResultdataResponse = await matchData(
-    `european football matches ${date.getFullYear()} results`
+    `european football match ${date.getFullYear()} results`
   );
   const upcomingmatchdataResponse = await matchData(
-    `upcoming european football 2024 match schedules`
+    `upcoming european football match schedules`
   );
 
   return (

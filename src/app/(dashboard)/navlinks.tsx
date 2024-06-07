@@ -32,8 +32,8 @@ export default function Navlinks() {
       icon: BundesligaIcon,
     },
     {
-      name: "Seria A",
-      href: "/seria-A",
+      name: "Serie A",
+      href: "/serie-A",
       icon: SeriaALogo,
     },
   ];
